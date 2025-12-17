@@ -1,14 +1,38 @@
-# Fichiers de build
+# === FLUTTER BUILD OUTPUTS ===
 build/
 .dart_tool/
 .flutter-plugins-dependencies
-pubspec.lock
+.flutter-plugins
+.packages
 
-# iOS / Android / Desktop
+# === TEMPORARY & GENERATED FILES ===
+*.dill
+*.tmp
+*.lock
+*.log
+*.DS_Store
+
+# === IDEs ===
+.vscode/
+.idea/
+
+# === OS-SPECIFIC FILES ===
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# === FLUTTER PLATFORM-SPECIFIC BUILD DIRS ===
 ios/Flutter/
 macos/Flutter/
 windows/Flutter/
 linux/flutter/
 
-# Vercel local
+# === VERCEL ===
 .vercel/
+.vercel/output/
+
+# === GIT CONFLICT BACKUP FILES ===
+*.orig
+
+# === OTHERS ===
+pubspec.lock
