@@ -224,7 +224,7 @@ class QRprufHome extends StatelessWidget {
                 height: 40,
                 width: double.infinity,
                 child: Image.asset(
-                  'assets/images/Footer.png',
+                  'assets/images/footer2.png',
                   fit: BoxFit.cover,
                 ),
               ),
