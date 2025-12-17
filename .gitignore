@@ -1,1 +1,14 @@
-.vercel
+# Fichiers de build
+build/
+.dart_tool/
+.flutter-plugins-dependencies
+pubspec.lock
+
+# iOS / Android / Desktop
+ios/Flutter/
+macos/Flutter/
+windows/Flutter/
+linux/flutter/
+
+# Vercel local
+.vercel/
