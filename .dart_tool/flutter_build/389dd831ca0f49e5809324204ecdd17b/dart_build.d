@@ -1,0 +1,1 @@
+ C:\\samir_flutter\\qrpruf\\.dart_tool\\flutter_build\\389dd831ca0f49e5809324204ecdd17b\\dart_build_result.json: 
