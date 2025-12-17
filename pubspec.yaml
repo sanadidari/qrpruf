@@ -23,3 +23,7 @@ flutter:
     - family: DSDigital
       fonts:
         - asset: assets/fonts/DS-DIGIT.ttf
+
+  assets:
+    - assets/
+    - assets/images/
