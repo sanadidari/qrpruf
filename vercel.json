@@ -1,6 +1,11 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }],
-  "outputDirectory": "build/web",
-  "cleanUrls": true,
-  "trailingSlash": false
+  "builds": [
+    {
+      "src": "vercel_build.sh",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build/web"
+      }
+    }
+  ]
 }
