@@ -51,7 +51,9 @@ class QRprufHome extends StatelessWidget {
           return Center(
             child: Container(
               width: containerWidth,
-              height: constraints.maxHeight,
+              constraints: const BoxConstraints(
+                maxWidth: 600,
+              ),
               decoration: BoxDecoration(
                 color: Colors.white,
                 boxShadow: [
@@ -62,22 +64,25 @@ class QRprufHome extends StatelessWidget {
                   ),
                 ],
               ),
-              child: Column(
-                children: [
-                  // ================= HEADER =================
-                  SizedBox(
-                    height: 150,
-                    width: double.infinity,
-                    child: Image.asset(
-                      'assets/images/header.png',
-                      fit: BoxFit.cover,
-                    ),
+              child: SingleChildScrollView(
+                child: ConstrainedBox(
+                  constraints: BoxConstraints(
+                    minHeight: constraints.maxHeight,
                   ),
-
-                  // ================= CONTENT =================
-                  Expanded(
+                  child: IntrinsicHeight(
                     child: Column(
                       children: [
+                        // HEADER
+                        SizedBox(
+                          height: 150,
+                          width: double.infinity,
+                          child: Image.asset(
+                            'assets/images/header.png',
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+
+                        // CONTENT
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                           child: Row(
@@ -100,7 +105,6 @@ class QRprufHome extends StatelessWidget {
                           ),
                         ),
 
-                        // CARD
                         Container(
                           margin: const EdgeInsets.symmetric(horizontal: 16),
                           padding: const EdgeInsets.all(10),
@@ -145,7 +149,6 @@ class QRprufHome extends StatelessWidget {
 
                         const SizedBox(height: 10),
 
-                        // VIDEO + CTA
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 16),
                           child: Column(
@@ -190,22 +193,22 @@ class QRprufHome extends StatelessWidget {
                           ),
                         ),
 
-                        // 🔑 ESPACE FLEXIBLE AVANT FOOTER
-                        const SizedBox(height: 300),
+                        // ESPACE FLEXIBLE
+                        const Spacer(),
+
+                        // FOOTER
+                        SizedBox(
+                          height: 40,
+                          width: double.infinity,
+                          child: Image.asset(
+                            'assets/images/footer.png',
+                            fit: BoxFit.cover,
+                          ),
+                        ),
                       ],
                     ),
                   ),
-
-                  // ================= FOOTER =================
-                  SizedBox(
-                    height: 40,
-                    width: double.infinity,
-                    child: Image.asset(
-                      'assets/images/footer.png',
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ],
+                ),
               ),
             ),
           );
