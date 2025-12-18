@@ -62,146 +62,149 @@ class QRprufHome extends StatelessWidget {
                   ),
                 ],
               ),
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    // HEADER
-                    SizedBox(
-                      height: 150,
-                      width: double.infinity,
-                      child: Image.asset(
-                        'assets/images/header.png',
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-
-                    // TOP BAR
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 16, vertical: 12),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          SizedBox(
-                            height: 30,
-                            child: Image.asset('assets/images/logo.png'),
-                          ),
-                          Row(
-                            children: [
-                              _buildIcon('assets/images/ico1.png'),
-                              const SizedBox(width: 6),
-                              _buildIcon('assets/images/ico2.png'),
-                              const SizedBox(width: 6),
-                              _buildIcon('assets/images/ico3.png'),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-
-                    // CARD
-                    Container(
-                      margin: const EdgeInsets.symmetric(horizontal: 16),
-                      padding: const EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        color: const Color(0xFFF5F5F5),
-                        borderRadius: BorderRadius.circular(10),
-                        border: Border.all(color: const Color(0xFFE0E0E0)),
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(6),
-                            child: Image.asset(
-                              'assets/images/img_accueil.png',
+              child: Column(
+                children: [
+                  /// CONTENU PRINCIPAL (s’adapte à la hauteur)
+                  Expanded(
+                    child: FittedBox(
+                      fit: BoxFit.scaleDown,
+                      alignment: Alignment.topCenter,
+                      child: SizedBox(
+                        width: containerWidth,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            // HEADER
+                            SizedBox(
                               height: 150,
-                              width: double.infinity,
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                          const SizedBox(height: 12),
-                          Text(
-                            'مرحباً بك في QRpruf',
-                            style: TextStyle(
-                              fontSize: isMobile ? 15 : 18,
-                              fontWeight: FontWeight.w800,
-                              color: const Color(0xFF222222),
-                            ),
-                          ),
-                          const SizedBox(height: 6),
-                          const Text(
-                            'جيل جديد من التوثيق الرقمي يمنحك القدرة على تحويل كل واقعة مهما صغرت إلى دليل رقمي محكم، آمن، ومقبول تقنياً وقانونياً.',
-                            style: TextStyle(
-                              fontSize: 12,
-                              height: 1.7,
-                              color: Color(0xFF333333),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-
-                    const SizedBox(height: 12),
-
-                    // SECTION
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16),
-                      child: Column(
-                        children: [
-                          Text(
-                            'كل واقعة…تصبح إثباتًا',
-                            style: TextStyle(
-                              fontSize: isMobile ? 18 : 22,
-                              fontWeight: FontWeight.w800,
-                              color: const Color(0xFF62A098),
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                          const SizedBox(height: 8),
-                          Row(
-                            children: [
-                              Expanded(
-                                child: Text(
-                                  'يستعرض الفيديو التوضيحي التالي كيف تعمل هذه الآلية بدقة',
-                                  style: TextStyle(
-                                    fontSize: isMobile ? 11 : 13,
-                                  ),
-                                ),
-                              ),
-                              const SizedBox(width: 10),
-                              Image.asset(
-                                'assets/images/anim_video.png',
-                                width: 110,
-                                height: 70,
+                              child: Image.asset(
+                                'assets/images/header.png',
                                 fit: BoxFit.cover,
                               ),
-                            ],
-                          ),
-                          const SizedBox(height: 12),
-                          Image.asset(
-                            'assets/images/cta.png',
-                            height: 60,
-                            width: double.infinity,
-                            fit: BoxFit.cover,
-                          ),
-                        ],
+                            ),
+
+                            Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 16, vertical: 12),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  SizedBox(
+                                    height: 30,
+                                    child: Image.asset(
+                                        'assets/images/logo.png'),
+                                  ),
+                                  Row(
+                                    children: [
+                                      _buildIcon('assets/images/ico1.png'),
+                                      const SizedBox(width: 6),
+                                      _buildIcon('assets/images/ico2.png'),
+                                      const SizedBox(width: 6),
+                                      _buildIcon('assets/images/ico3.png'),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+
+                            Container(
+                              margin:
+                                  const EdgeInsets.symmetric(horizontal: 16),
+                              padding: const EdgeInsets.all(10),
+                              decoration: BoxDecoration(
+                                color: const Color(0xFFF5F5F5),
+                                borderRadius: BorderRadius.circular(10),
+                                border: Border.all(
+                                    color: const Color(0xFFE0E0E0)),
+                              ),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  ClipRRect(
+                                    borderRadius: BorderRadius.circular(6),
+                                    child: Image.asset(
+                                      'assets/images/img_accueil.png',
+                                      height: 140,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                  const SizedBox(height: 8),
+                                  const Text(
+                                    'مرحباً بك في QRpruf',
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w800,
+                                    ),
+                                  ),
+                                  const SizedBox(height: 4),
+                                  const Text(
+                                    'جيل جديد من التوثيق الرقمي يمنحك القدرة على تحويل كل واقعة مهما صغرت إلى دليل رقمي محكم.',
+                                    style: TextStyle(fontSize: 12),
+                                  ),
+                                ],
+                              ),
+                            ),
+
+                            const SizedBox(height: 10),
+
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 16),
+                              child: Column(
+                                children: [
+                                  const Text(
+                                    'كل واقعة…تصبح إثباتًا',
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w800,
+                                      color: Color(0xFF62A098),
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                  const SizedBox(height: 6),
+                                  Row(
+                                    children: [
+                                      const Expanded(
+                                        child: Text(
+                                          'يستعرض الفيديو التوضيحي التالي كيف تعمل هذه الآلية',
+                                          style: TextStyle(fontSize: 11),
+                                        ),
+                                      ),
+                                      const SizedBox(width: 8),
+                                      Image.asset(
+                                        'assets/images/anim_video.png',
+                                        width: 90,
+                                        height: 60,
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ],
+                                  ),
+                                  const SizedBox(height: 8),
+                                  Image.asset(
+                                    'assets/images/cta.png',
+                                    height: 55,
+                                    fit: BoxFit.cover,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
+                  ),
 
-                    const SizedBox(height: 20),
-
-                    // FOOTER ✅ VISIBLE
-                    SizedBox(
-                      height: 40,
-                      width: double.infinity,
-                      child: Image.asset(
-                        'assets/images/footer.png',
-                        fit: BoxFit.cover,
-                      ),
+                  /// FOOTER FIXE
+                  SizedBox(
+                    height: 40,
+                    width: double.infinity,
+                    child: Image.asset(
+                      'assets/images/footer.png',
+                      fit: BoxFit.cover,
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
           );
