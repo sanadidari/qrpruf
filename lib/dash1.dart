@@ -4,6 +4,9 @@ import 'package:google_fonts/google_fonts.dart';
 class Dash1Page extends StatelessWidget {
   const Dash1Page({super.key});
 
+  static const double _headerHeight = 65;
+  static const double _footerHeight = 40;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -12,10 +15,10 @@ class Dash1Page extends StatelessWidget {
         children: [
           /// ================= HEADER (IMAGE UNIQUE) =================
           SizedBox(
-            height: 65,
+            height: _headerHeight,
             width: double.infinity,
             child: Image.asset(
-              'assets/images/header.png', // ⬅️ image complète (logo + slogan)
+              'assets/images/header.png', // image complète (logo + slogan)
               fit: BoxFit.cover,
             ),
           ),
@@ -44,45 +47,8 @@ class Dash1Page extends StatelessWidget {
                           height: 24,
                         ),
 
-                        /// LOGIN BLOCK (RTL ALIGN CORRECT)
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Text(
-                                  'إنشاء حساب',
-                                  textAlign: TextAlign.right,
-                                  style: GoogleFonts.cairo(
-                                    fontSize: 10,
-                                    color: Colors.grey.shade600,
-                                    height: 1.1,
-                                  ),
-                                ),
-                                Text(
-                                  'تسجيل الدخول',
-                                  textAlign: TextAlign.right,
-                                  style: GoogleFonts.cairo(
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.bold,
-                                    height: 1.1,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            const SizedBox(width: 6),
-                            Padding(
-                              padding: const EdgeInsets.only(bottom: 1),
-                              child: Image.asset(
-                                'assets/images/flechy.png',
-                                width: 18,
-                                height: 18,
-                              ),
-                            ),
-                          ],
-                        ),
+                        /// LOGIN BLOCK (flèche alignée à la 2e ligne)
+                        _LoginBlock(),
 
                         /// ICONES
                         Row(
@@ -146,20 +112,20 @@ class Dash1Page extends StatelessWidget {
 
                   const SizedBox(height: 16),
 
-                  /// -------- HR --------
-                  Container(
-                    width: 150,
-                    height: 1,
-                    margin: const EdgeInsets.symmetric(vertical: 8),
-                    color: Colors.grey.shade400,
+                  /// -------- HR (200px centré) --------
+                  Center(
+                    child: Container(
+                      width: 200,
+                      height: 1,
+                      color: Colors.grey.shade400,
+                    ),
                   ),
 
                   const SizedBox(height: 18),
 
                   /// -------- BUTTONS --------
                   Container(
-                    margin:
-                        const EdgeInsets.symmetric(horizontal: 10),
+                    margin: const EdgeInsets.symmetric(horizontal: 10),
                     padding: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
                       color: const Color(0xFFF5F5F5),
@@ -184,31 +150,49 @@ class Dash1Page extends StatelessWidget {
 
                   const Spacer(),
 
-                  /// -------- NOTE + ICONES --------
+                  /// -------- NOTE + 2 ICONES (ensemble à gauche) --------
                   Padding(
                     padding: const EdgeInsets.fromLTRB(10, 0, 10, 10),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text(
-                          '؟',
-                          style: TextStyle(fontSize: 20),
+                        /// Colonne icônes à gauche (whats + help)
+                        Column(
+                          children: [
+                            Image.asset(
+                              'assets/images/whatsy.png',
+                              width: 22,
+                              height: 22,
+                            ),
+                            const SizedBox(height: 6),
+                            Image.asset(
+                              'assets/images/helpy.png',
+                              width: 22,
+                              height: 22,
+                            ),
+                          ],
                         ),
-                        const SizedBox(width: 8),
+                        const SizedBox(width: 10),
+
+                        /// Texte (avec le ? au début, côté droit en RTL)
                         Expanded(
-                          child: Text(
-                            'ملاحظة: لا يحتفظ QRpruf بأي بيانات تعريفية أو بيومترية ضمن مركز التحكم، وتتم جميع عمليات التوثيق والتحقق بالاعتماد على أمان جهازك، دون تخزين أو معالجة لأي معطيات شخصية خارج الإطار القانوني الآمن.',
-                            style: GoogleFonts.cairo(
-                              fontSize: 9,
-                              height: 1.4,
+                          child: RichText(
+                            textAlign: TextAlign.right,
+                            text: TextSpan(
+                              style: GoogleFonts.cairo(
+                                fontSize: 9,
+                                height: 1.4,
+                                color: Colors.black,
+                              ),
+                              children: const [
+                                TextSpan(text: '؟  '),
+                                TextSpan(
+                                  text:
+                                      'ملاحظة: لا يحتفظ QRpruf بأي بيانات تعريفية أو بيومترية ضمن مركز التحكم، وتتم جميع عمليات التوثيق والتحقق بالاعتماد على أمان جهازك، دون تخزين أو معالجة لأي معطيات شخصية خارج الإطار القانوني الآمن.',
+                                ),
+                              ],
                             ),
                           ),
-                        ),
-                        const SizedBox(width: 8),
-                        Image.asset(
-                          'assets/images/whatsy.png',
-                          width: 22,
-                          height: 22,
                         ),
                       ],
                     ),
@@ -220,11 +204,67 @@ class Dash1Page extends StatelessWidget {
 
           /// ================= FOOTER =================
           SizedBox(
-            height: 40,
+            height: _footerHeight,
             width: double.infinity,
             child: Image.asset(
               'assets/images/footer.png',
               fit: BoxFit.cover,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _LoginBlock extends StatelessWidget {
+  const _LoginBlock();
+
+  @override
+  Widget build(BuildContext context) {
+    // Hauteur fixe pour pouvoir aligner la flèche exactement sur la 2e ligne
+    const double blockHeight = 28;
+
+    return SizedBox(
+      height: blockHeight,
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          // Textes alignés à droite
+          Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                'إنشاء حساب',
+                textAlign: TextAlign.right,
+                style: GoogleFonts.cairo(
+                  fontSize: 10,
+                  color: Colors.grey.shade600,
+                  height: 1.05,
+                ),
+              ),
+              Text(
+                'تسجيل الدخول',
+                textAlign: TextAlign.right,
+                style: GoogleFonts.cairo(
+                  fontSize: 12,
+                  fontWeight: FontWeight.bold,
+                  height: 1.05,
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(width: 6),
+
+          // Flèche alignée sur la 2e ligne (bas du bloc)
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Image.asset(
+              'assets/images/flechy.png',
+              width: 18,
+              height: 18,
             ),
           ),
         ],
