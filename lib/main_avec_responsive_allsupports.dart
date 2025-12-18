@@ -69,7 +69,7 @@ class QRprufHome extends StatelessWidget {
                     height: 150,
                     width: double.infinity,
                     child: Image.asset(
-                      'assets/images/Header.png',
+                      'assets/images/header.png',
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -85,7 +85,7 @@ class QRprufHome extends StatelessWidget {
                             children: [
                               SizedBox(
                                 height: 30,
-                                child: Image.asset('assets/images/Logo.png'),
+                                child: Image.asset('assets/images/logo.png'),
                               ),
                               Row(
                                 children: [
@@ -115,7 +115,7 @@ class QRprufHome extends StatelessWidget {
                               ClipRRect(
                                 borderRadius: BorderRadius.circular(6),
                                 child: Image.asset(
-                                  'assets/images/phPrinc1.png',
+                                  'assets/images/img_accueil.png',
                                   height: 150,
                                   width: double.infinity,
                                   fit: BoxFit.cover,
@@ -172,7 +172,7 @@ class QRprufHome extends StatelessWidget {
                                   ),
                                   const SizedBox(width: 10),
                                   Image.asset(
-                                    'assets/images/Video.png',
+                                    'assets/images/anim_video.png',
                                     width: 110,
                                     height: 70,
                                     fit: BoxFit.cover,
@@ -181,7 +181,7 @@ class QRprufHome extends StatelessWidget {
                               ),
                               const SizedBox(height: 10),
                               Image.asset(
-                                'assets/images/CTA.png',
+                                'assets/images/cta.png',
                                 height: 60,
                                 width: double.infinity,
                                 fit: BoxFit.cover,
@@ -198,7 +198,7 @@ class QRprufHome extends StatelessWidget {
                     height: 40,
                     width: double.infinity,
                     child: Image.asset(
-                      'assets/images/Fouter.png',
+                      'assets/images/footer.png',
                       fit: BoxFit.cover,
                     ),
                   ),

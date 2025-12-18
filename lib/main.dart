@@ -12,8 +12,8 @@ class QRprufApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'QRpruf',
       debugShowCheckedModeBanner: false,
+      title: 'QRpruf',
       theme: ThemeData(
         textTheme: GoogleFonts.cairoTextTheme(),
       ),
@@ -26,10 +26,7 @@ class QRprufApp extends StatelessWidget {
           ),
         );
       },
-      home: const Directionality(
-        textDirection: TextDirection.rtl,
-        child: QRprufHome(),
-      ),
+      home: const QRprufHome(),
     );
   }
 }
@@ -47,9 +44,13 @@ class QRprufHome extends StatelessWidget {
       backgroundColor: const Color(0xFFE5E5E5),
       body: LayoutBuilder(
         builder: (context, constraints) {
+          final bool isMobile = constraints.maxWidth < 500;
+          final double containerWidth =
+              isMobile ? 360 : constraints.maxWidth * 0.8;
+
           return Center(
             child: Container(
-              width: 360,
+              width: containerWidth,
               height: constraints.maxHeight,
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -58,11 +59,12 @@ class QRprufHome extends StatelessWidget {
                     color: Colors.black.withOpacity(0.25),
                     blurRadius: 28,
                     offset: const Offset(0, 10),
-                  )
+                  ),
                 ],
               ),
               child: Column(
                 children: [
+                  // HEADER
                   SizedBox(
                     height: 150,
                     width: double.infinity,
@@ -71,6 +73,8 @@ class QRprufHome extends StatelessWidget {
                       fit: BoxFit.cover,
                     ),
                   ),
+
+                  // CONTENT
                   Expanded(
                     child: Column(
                       children: [
@@ -86,15 +90,17 @@ class QRprufHome extends StatelessWidget {
                               Row(
                                 children: [
                                   _buildIcon('assets/images/ico1.png'),
-                                  const SizedBox(width: 5),
+                                  const SizedBox(width: 6),
                                   _buildIcon('assets/images/ico2.png'),
-                                  const SizedBox(width: 5),
+                                  const SizedBox(width: 6),
                                   _buildIcon('assets/images/ico3.png'),
                                 ],
                               ),
                             ],
                           ),
                         ),
+
+                        // MAIN CARD
                         Container(
                           margin: const EdgeInsets.symmetric(horizontal: 16),
                           padding: const EdgeInsets.all(10),
@@ -116,12 +122,12 @@ class QRprufHome extends StatelessWidget {
                                 ),
                               ),
                               const SizedBox(height: 12),
-                              const Text(
+                              Text(
                                 'مرحباً بك في QRpruf',
                                 style: TextStyle(
-                                  fontSize: 15,
+                                  fontSize: isMobile ? 15 : 18,
                                   fontWeight: FontWeight.w800,
-                                  color: Color(0xFF222222),
+                                  color: const Color(0xFF222222),
                                 ),
                               ),
                               const SizedBox(height: 6),
@@ -133,90 +139,61 @@ class QRprufHome extends StatelessWidget {
                                   color: Color(0xFF333333),
                                 ),
                               ),
-                              const SizedBox(height: 6),
-                              const Text.rich(
-                                TextSpan(
-                                  text: 'هنا يبدأ ',
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    height: 1.7,
-                                    color: Color(0xFF333333),
-                                  ),
-                                  children: [
-                                    TextSpan(
-                                      text: 'عالم تُصان فيه الحقيقة،',
-                                      style: TextStyle(fontWeight: FontWeight.bold),
-                                    ),
-                                    TextSpan(
-                                      text: ' وتُوثّق فيه حقوقك بمعايير موثوقية غير مسبوقة.',
-                                    ),
-                                  ],
-                                ),
-                              ),
                             ],
                           ),
                         ),
-                        const SizedBox(height: 8),
-                        Container(
-                          margin: const EdgeInsets.symmetric(horizontal: 16),
+
+                        const SizedBox(height: 10),
+
+                        // VIDEO + CTA
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 16),
                           child: Column(
                             children: [
-                              const Text(
+                              Text(
                                 'كل واقعة…تصبح إثباتًا',
                                 style: TextStyle(
-                                  fontSize: 18,
+                                  fontSize: isMobile ? 18 : 22,
                                   fontWeight: FontWeight.w800,
-                                  color: Color(0xFF62A098),
-                                  height: 1.4,
+                                  color: const Color(0xFF62A098),
                                 ),
                                 textAlign: TextAlign.center,
                               ),
                               const SizedBox(height: 8),
-                              Container(
-                                padding: const EdgeInsets.all(12),
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                child: Row(
-                                  children: [
-                                    Expanded(
-                                      child: Text(
-                                        'يستعــرض الفيـديـــــو التوضيحي التالي كيف تعمل هذه الآلية بدقة',
-                                        style: TextStyle(
-                                          fontSize: 11,
-                                          color: Colors.grey.shade800,
-                                        ),
+                              Row(
+                                children: [
+                                  Expanded(
+                                    child: Text(
+                                      'يستعرض الفيديو التوضيحي التالي كيف تعمل هذه الآلية بدقة',
+                                      style: TextStyle(
+                                        fontSize: isMobile ? 11 : 13,
                                       ),
                                     ),
-                                    const SizedBox(width: 10),
-                                    ClipRRect(
-                                      borderRadius: BorderRadius.circular(6),
-                                      child: Image.asset(
-                                        'assets/images/anim_video.png',
-                                        width: 110,
-                                        height: 70,
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                  ],
-                                ),
+                                  ),
+                                  const SizedBox(width: 10),
+                                  Image.asset(
+                                    'assets/images/anim_video.png',
+                                    width: 110,
+                                    height: 70,
+                                    fit: BoxFit.cover,
+                                  ),
+                                ],
                               ),
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(15),
-                                child: Image.asset(
-                                  'assets/images/cta.png',
-                                  width: double.infinity,
-                                  height: 60,
-                                  fit: BoxFit.cover,
-                                ),
+                              const SizedBox(height: 10),
+                              Image.asset(
+                                'assets/images/cta.png',
+                                height: 60,
+                                width: double.infinity,
+                                fit: BoxFit.cover,
                               ),
                             ],
                           ),
                         ),
-                        const SizedBox(height: 10),
                       ],
                     ),
                   ),
+
+                  // FOOTER
                   SizedBox(
                     height: 40,
                     width: double.infinity,
@@ -234,16 +211,11 @@ class QRprufHome extends StatelessWidget {
     );
   }
 
-  Widget _buildIcon(String assetPath) {
-    return Container(
+  Widget _buildIcon(String asset) {
+    return SizedBox(
       width: 22,
       height: 22,
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage(assetPath),
-          fit: BoxFit.contain,
-        ),
-      ),
+      child: Image.asset(asset),
     );
   }
 }
