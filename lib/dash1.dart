@@ -12,11 +12,12 @@ class Dash1Page extends StatelessWidget {
         children: [
           /// ================= HEADER =================
           SizedBox(
-            height: 65,
+            height: 60, // encore plus fin (HTML-like)
             width: double.infinity,
             child: Image.asset(
               'assets/images/header_sec.png',
               fit: BoxFit.contain,
+              alignment: Alignment.topCenter,
             ),
           ),
 
@@ -33,7 +34,7 @@ class Dash1Page extends StatelessWidget {
                       top: 25,
                       left: 10,
                       right: 15,
-                      bottom: 15,
+                      bottom: 12,
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -48,27 +49,31 @@ class Dash1Page extends StatelessWidget {
                           children: [
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.end,
+                              mainAxisSize: MainAxisSize.min,
                               children: [
                                 Text(
                                   'إنشاء حساب',
                                   style: GoogleFonts.cairo(
                                     fontSize: 10,
+                                    height: 1.1,
+                                    color: Colors.grey.shade600,
                                   ),
                                 ),
                                 Text(
                                   'تسجيل الدخول',
                                   style: GoogleFonts.cairo(
                                     fontSize: 11,
+                                    height: 1.1,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
                               ],
                             ),
-                            const SizedBox(width: 6),
+                            const SizedBox(width: 4), // plus serré
                             Image.asset(
                               'assets/images/flechy.png',
-                              width: 20,
-                              height: 20,
+                              width: 18,
+                              height: 18,
                             ),
                           ],
                         ),
@@ -96,8 +101,10 @@ class Dash1Page extends StatelessWidget {
                         Container(
                           width: double.infinity,
                           color: const Color(0xFFEBF4F3),
-                          padding: const EdgeInsets.symmetric(vertical: 20),
-                          margin: const EdgeInsets.symmetric(vertical: 35),
+                          padding:
+                              const EdgeInsets.symmetric(vertical: 16),
+                          margin:
+                              const EdgeInsets.symmetric(vertical: 30),
                           child: Text(
                             'مركز التحكم التوثيقي',
                             textAlign: TextAlign.center,
@@ -112,15 +119,16 @@ class Dash1Page extends StatelessWidget {
                         Text(
                           'مســــارات الاستخـــدام',
                           style: GoogleFonts.cairo(
-                            fontSize: 17,
-                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600,
                           ),
                         ),
 
-                        const SizedBox(height: 10),
+                        const SizedBox(height: 8),
 
                         Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 20),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 16),
                           child: Column(
                             children: [
                               Text(
@@ -131,7 +139,7 @@ class Dash1Page extends StatelessWidget {
                                   height: 1.7,
                                 ),
                               ),
-                              const SizedBox(height: 20),
+                              const SizedBox(height: 18),
                               Container(
                                 width: 150,
                                 height: 1,
@@ -146,7 +154,8 @@ class Dash1Page extends StatelessWidget {
 
                   /// -------- BUTTONS --------
                   Container(
-                    margin: const EdgeInsets.fromLTRB(10, 20, 10, 45),
+                    margin:
+                        const EdgeInsets.fromLTRB(10, 20, 10, 45),
                     padding: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
                       color: const Color(0xFFF5F5F5),
@@ -155,16 +164,18 @@ class Dash1Page extends StatelessWidget {
                     child: Column(
                       children: [
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment:
+                              MainAxisAlignment.spaceBetween,
                           children: const [
                             _BtnImg('assets/images/btn_icon1.png'),
                             _BtnImg('assets/images/btn_icon2.png'),
                             _BtnImg('assets/images/btn_icon3.png'),
                           ],
                         ),
-                        const SizedBox(height: 10),
+                        const SizedBox(height: 8), // gap réduit
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment:
+                              MainAxisAlignment.spaceBetween,
                           children: const [
                             _BtnImg('assets/images/btn_icon4.png'),
                             _BtnImg('assets/images/btn_icon5.png'),
@@ -181,12 +192,12 @@ class Dash1Page extends StatelessWidget {
                     children: [
                       Expanded(
                         child: Padding(
-                          padding:
-                              const EdgeInsets.fromLTRB(10, 30, 20, 0),
+                          padding: const EdgeInsets.fromLTRB(
+                              10, 30, 20, 0),
                           child: Text(
                             'ملاحظة: لا يحتفظ QRpruf بأي بيانات تعريفية أو بيومترية ضمن مركز التحكم، وتتم جميع عمليات التوثيق والتحقق بالاعتماد على أمان جهازك، دون تخزين أو معالجة لأي معطيات شخصية خارج الإطار القانوني الآمن.',
                             style: GoogleFonts.cairo(
-                              fontSize: 9,
+                              fontSize: 8.5,
                               height: 1.4,
                               color: const Color(0xFF333333),
                             ),
@@ -198,10 +209,10 @@ class Dash1Page extends StatelessWidget {
                         child: Column(
                           children: [
                             Image.asset('assets/images/whatsy.png',
-                                width: 24),
+                                width: 20),
                             const SizedBox(height: 6),
                             Image.asset('assets/images/helpy.png',
-                                width: 24),
+                                width: 20),
                           ],
                         ),
                       ),
@@ -236,7 +247,7 @@ class _BtnImg extends StatelessWidget {
     return Image.asset(
       asset,
       width: 95,
-      height: 95,
+      height: 90, // légèrement plus large que haut
     );
   }
 }
