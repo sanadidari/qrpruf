@@ -191,7 +191,7 @@ class QRprufHome extends StatelessWidget {
                         ),
 
                         // 🔑 ESPACE FLEXIBLE AVANT FOOTER
-                        const SizedBox(height: 20),
+                        const SizedBox(height: 50),
                       ],
                     ),
                   ),
