@@ -12,7 +12,7 @@ class Dash1Page extends StatelessWidget {
         children: [
           /// ================= HEADER =================
           SizedBox(
-            height: 60, // encore plus fin (HTML-like)
+            height: 60,
             width: double.infinity,
             child: Image.asset(
               'assets/images/header_sec.png',
@@ -32,20 +32,23 @@ class Dash1Page extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(
                       top: 25,
-                      left: 10,
-                      right: 15,
+                      left: 10,   // ⬅️ comme HTML
+                      right: 15,  // ⬅️ comme HTML
                       bottom: 12,
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
+                        /// MENU
                         Image.asset(
                           'assets/images/menu_deroul.png',
                           width: 25,
                           height: 25,
                         ),
 
+                        /// LOGIN / SIGN UP
                         Row(
+                          crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.end,
@@ -69,15 +72,19 @@ class Dash1Page extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            const SizedBox(width: 4), // plus serré
-                            Image.asset(
-                              'assets/images/flechy.png',
-                              width: 18,
-                              height: 18,
+                            const SizedBox(width: 4),
+                            Padding(
+                              padding: const EdgeInsets.only(bottom: 2),
+                              child: Image.asset(
+                                'assets/images/flechy.png',
+                                width: 18,
+                                height: 18,
+                              ),
                             ),
                           ],
                         ),
 
+                        /// ICONES
                         Row(
                           children: [
                             Image.asset('assets/images/ico1.png',
@@ -94,7 +101,7 @@ class Dash1Page extends StatelessWidget {
                     ),
                   ),
 
-                  /// -------- TITLES BLOCK --------
+                  /// -------- TITLES --------
                   Expanded(
                     child: Column(
                       children: [
@@ -127,26 +134,24 @@ class Dash1Page extends StatelessWidget {
                         const SizedBox(height: 8),
 
                         Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 16),
-                          child: Column(
-                            children: [
-                              Text(
-                                'اختــر المسار الذي يناســب وضعــك القانونــي أو المهنـي للحصول علـى تجربة توثيـق مكيّفة ودقيقة داخل QRpruf.',
-                                textAlign: TextAlign.center,
-                                style: GoogleFonts.cairo(
-                                  fontSize: 12,
-                                  height: 1.7,
-                                ),
-                              ),
-                              const SizedBox(height: 18),
-                              Container(
-                                width: 150,
-                                height: 1,
-                                color: Colors.grey.shade400,
-                              ),
-                            ],
+                          padding: const EdgeInsets.symmetric(horizontal: 16),
+                          child: Text(
+                            'اختــر المسار الذي يناســب وضعــك القانونــي أو المهنـي للحصول علـى تجربة توثيـق مكيّفة ودقيقة داخل QRpruf.',
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.cairo(
+                              fontSize: 12,
+                              height: 1.7,
+                            ),
                           ),
+                        ),
+
+                        const SizedBox(height: 18),
+
+                        /// -------- HR (séparation avant boutons) --------
+                        Container(
+                          width: 150,
+                          height: 1,
+                          color: Colors.grey.shade400,
                         ),
                       ],
                     ),
@@ -172,7 +177,7 @@ class Dash1Page extends StatelessWidget {
                             _BtnImg('assets/images/btn_icon3.png'),
                           ],
                         ),
-                        const SizedBox(height: 8), // gap réduit
+                        const SizedBox(height: 8),
                         Row(
                           mainAxisAlignment:
                               MainAxisAlignment.spaceBetween,
@@ -247,7 +252,7 @@ class _BtnImg extends StatelessWidget {
     return Image.asset(
       asset,
       width: 95,
-      height: 90, // légèrement plus large que haut
+      height: 90,
     );
   }
 }
