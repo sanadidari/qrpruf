@@ -10,165 +10,211 @@ class Dash1Page extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Column(
         children: [
-          /// ================= HEADER (HEIGHT REDUCED) =================
+          /// ================= HEADER =================
           SizedBox(
-            height: 115, // ⬅️ réduit
+            height: 65,
             width: double.infinity,
             child: Image.asset(
               'assets/images/header_sec.png',
-              fit: BoxFit.cover,
+              fit: BoxFit.contain,
             ),
           ),
 
-          /// ================= TOP BAR =================
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 12),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Image.asset(
-                  'assets/images/menu_deroul.png',
-                  height: 22,
-                ),
-                Column(
-                  children: [
-                    Text(
-                      'إنشاء حساب',
-                      style: GoogleFonts.cairo(
-                        fontSize: 10,
-                        color: Colors.grey.shade600,
-                      ),
+          /// ================= CONTENT =================
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 5),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  /// -------- TOP BAR --------
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      top: 25,
+                      left: 10,
+                      right: 15,
+                      bottom: 15,
                     ),
-                    const SizedBox(height: 2),
-                    Row(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Image.asset(
-                          'assets/images/flechy.png',
-                          height: 14,
+                          'assets/images/menu_deroul.png',
+                          width: 25,
+                          height: 25,
                         ),
-                        const SizedBox(width: 6),
+
+                        Row(
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                Text(
+                                  'إنشاء حساب',
+                                  style: GoogleFonts.cairo(
+                                    fontSize: 10,
+                                  ),
+                                ),
+                                Text(
+                                  'تسجيل الدخول',
+                                  style: GoogleFonts.cairo(
+                                    fontSize: 11,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(width: 6),
+                            Image.asset(
+                              'assets/images/flechy.png',
+                              width: 20,
+                              height: 20,
+                            ),
+                          ],
+                        ),
+
+                        Row(
+                          children: [
+                            Image.asset('assets/images/ico1.png',
+                                width: 22, height: 22),
+                            const SizedBox(width: 5),
+                            Image.asset('assets/images/ico2.png',
+                                width: 22, height: 22),
+                            const SizedBox(width: 5),
+                            Image.asset('assets/images/ico3.png',
+                                width: 22, height: 22),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  /// -------- TITLES BLOCK --------
+                  Expanded(
+                    child: Column(
+                      children: [
+                        Container(
+                          width: double.infinity,
+                          color: const Color(0xFFEBF4F3),
+                          padding: const EdgeInsets.symmetric(vertical: 20),
+                          margin: const EdgeInsets.symmetric(vertical: 35),
+                          child: Text(
+                            'مركز التحكم التوثيقي',
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.cairo(
+                              fontSize: 25,
+                              fontWeight: FontWeight.bold,
+                              color: const Color(0xFF0C8172),
+                            ),
+                          ),
+                        ),
+
                         Text(
-                          'تسجيل الدخول',
+                          'مســــارات الاستخـــدام',
                           style: GoogleFonts.cairo(
-                            fontSize: 15,
-                            fontWeight: FontWeight.w700,
+                            fontSize: 17,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+
+                        const SizedBox(height: 10),
+
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 20),
+                          child: Column(
+                            children: [
+                              Text(
+                                'اختــر المسار الذي يناســب وضعــك القانونــي أو المهنـي للحصول علـى تجربة توثيـق مكيّفة ودقيقة داخل QRpruf.',
+                                textAlign: TextAlign.center,
+                                style: GoogleFonts.cairo(
+                                  fontSize: 12,
+                                  height: 1.7,
+                                ),
+                              ),
+                              const SizedBox(height: 20),
+                              Container(
+                                width: 150,
+                                height: 1,
+                                color: Colors.grey.shade400,
+                              ),
+                            ],
                           ),
                         ),
                       ],
                     ),
-                  ],
-                ),
-                Row(
-                  children: [
-                    Image.asset('assets/images/helpy.png', height: 18),
-                    const SizedBox(width: 12),
-                    Image.asset('assets/images/logo.png', height: 18),
-                    const SizedBox(width: 12),
-                    Image.asset('assets/images/whatsy.png', height: 18),
-                  ],
-                ),
-              ],
-            ),
-          ),
+                  ),
 
-          const SizedBox(height: 16),
+                  /// -------- BUTTONS --------
+                  Container(
+                    margin: const EdgeInsets.fromLTRB(10, 20, 10, 45),
+                    padding: const EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      color: const Color(0xFFF5F5F5),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: const [
+                            _BtnImg('assets/images/btn_icon1.png'),
+                            _BtnImg('assets/images/btn_icon2.png'),
+                            _BtnImg('assets/images/btn_icon3.png'),
+                          ],
+                        ),
+                        const SizedBox(height: 10),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: const [
+                            _BtnImg('assets/images/btn_icon4.png'),
+                            _BtnImg('assets/images/btn_icon5.png'),
+                            _BtnImg('assets/images/btn_icon6.png'),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
 
-          /// ================= TITLES =================
-          Text(
-            'مركز التحكم التوثيقي',
-            style: GoogleFonts.cairo(
-              fontSize: 22,
-              fontWeight: FontWeight.w800,
-              color: const Color(0xFF6FAFA4), // 🎨 ajusté
-            ),
-          ),
-
-          const SizedBox(height: 14),
-
-          Text(
-            'مسارات الاستخدام',
-            style: GoogleFonts.cairo(
-              fontSize: 16,
-              fontWeight: FontWeight.w600,
-              color: const Color(0xFF555555), // 🎨 gris foncé
-            ),
-          ),
-
-          const SizedBox(height: 8),
-
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 26),
-            child: Text(
-              'اختر المسار الذي يناسب وضعك القانوني أو المهني للحصول على تجربة توثيق مخصصة ودقيقة داخل QRpruf.',
-              textAlign: TextAlign.center,
-              style: GoogleFonts.cairo(
-                fontSize: 12,
-                height: 1.8, // 📐 interligne augmenté
-                color: Colors.grey.shade700,
+                  /// -------- NOTE --------
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Expanded(
+                        child: Padding(
+                          padding:
+                              const EdgeInsets.fromLTRB(10, 30, 20, 0),
+                          child: Text(
+                            'ملاحظة: لا يحتفظ QRpruf بأي بيانات تعريفية أو بيومترية ضمن مركز التحكم، وتتم جميع عمليات التوثيق والتحقق بالاعتماد على أمان جهازك، دون تخزين أو معالجة لأي معطيات شخصية خارج الإطار القانوني الآمن.',
+                            style: GoogleFonts.cairo(
+                              fontSize: 9,
+                              height: 1.4,
+                              color: const Color(0xFF333333),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 12),
+                        child: Column(
+                          children: [
+                            Image.asset('assets/images/whatsy.png',
+                                width: 24),
+                            const SizedBox(height: 6),
+                            Image.asset('assets/images/helpy.png',
+                                width: 24),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
               ),
             ),
           ),
 
-          const SizedBox(height: 22),
-
-          /// ================= GRID BUTTONS =================
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: GridView.count(
-              shrinkWrap: true,
-              crossAxisCount: 3,
-              crossAxisSpacing: 12,
-              mainAxisSpacing: 12,
-              childAspectRatio: 1.05, // 📐 boutons plus larges
-              physics: const NeverScrollableScrollPhysics(),
-              children: const [
-                _DashBtn('assets/images/btn_icon1.png', 'الاستعمال الشخصي'),
-                _DashBtn('assets/images/btn_icon2.png', 'المهن المنظمة'),
-                _DashBtn('assets/images/btn_icon3.png', 'الإدارات العمومية'),
-                _DashBtn('assets/images/btn_icon4.png', 'المؤسسات الخاصة'),
-                _DashBtn('assets/images/btn_icon5.png', 'المحامون والخبراء'),
-                _DashBtn('assets/images/btn_icon6.png', 'الهيئات المهنية'),
-              ],
-            ),
-          ),
-
-          const SizedBox(height: 18),
-
-          /// ================= BOTTOM NOTE =================
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text(
-                  '؟',
-                  style: TextStyle(fontSize: 20),
-                ),
-                const SizedBox(width: 10),
-                Expanded(
-                  child: Text(
-                    'ملاحظة: منصة QRpruf لا تمنح أي صفة قانونية، بل توفر وسيلة تقنية محايدة لتسجيل وحفظ الأدلة الرقمية.',
-                    style: GoogleFonts.cairo(
-                      fontSize: 11,
-                      height: 1.7,
-                      color: Colors.grey.shade700,
-                    ),
-                  ),
-                ),
-                const SizedBox(width: 10),
-                Image.asset(
-                  'assets/images/whatsy.png',
-                  height: 20,
-                ),
-              ],
-            ),
-          ),
-
-          const Spacer(),
-
           /// ================= FOOTER =================
           SizedBox(
-            height: 38,
+            height: 40,
             width: double.infinity,
             child: Image.asset(
               'assets/images/footer.png',
@@ -181,35 +227,16 @@ class Dash1Page extends StatelessWidget {
   }
 }
 
-class _DashBtn extends StatelessWidget {
-  final String image;
-  final String label;
-
-  const _DashBtn(this.image, this.label);
+class _BtnImg extends StatelessWidget {
+  final String asset;
+  const _BtnImg(this.asset);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: const Color(0xFFEEF7F5), // 🎨 fond plus pastel
-        borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: const Color(0xFFD9ECE7)),
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image.asset(image, height: 40),
-          const SizedBox(height: 8),
-          Text(
-            label,
-            textAlign: TextAlign.center,
-            style: GoogleFonts.cairo(
-              fontSize: 11,
-              fontWeight: FontWeight.w700,
-            ),
-          ),
-        ],
-      ),
+    return Image.asset(
+      asset,
+      width: 95,
+      height: 95,
     );
   }
 }
