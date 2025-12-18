@@ -64,7 +64,7 @@ class QRprufHome extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  // HEADER
+                  // ================= HEADER =================
                   SizedBox(
                     height: 150,
                     width: double.infinity,
@@ -74,7 +74,7 @@ class QRprufHome extends StatelessWidget {
                     ),
                   ),
 
-                  // CONTENT
+                  // ================= CONTENT =================
                   Expanded(
                     child: Column(
                       children: [
@@ -100,7 +100,7 @@ class QRprufHome extends StatelessWidget {
                           ),
                         ),
 
-                        // MAIN CARD
+                        // CARD
                         Container(
                           margin: const EdgeInsets.symmetric(horizontal: 16),
                           padding: const EdgeInsets.all(10),
@@ -189,11 +189,14 @@ class QRprufHome extends StatelessWidget {
                             ],
                           ),
                         ),
+
+                        // 🔑 ESPACE FLEXIBLE AVANT FOOTER
+                        const Spacer(),
                       ],
                     ),
                   ),
 
-                  // FOOTER
+                  // ================= FOOTER =================
                   SizedBox(
                     height: 40,
                     width: double.infinity,
@@ -219,3 +222,4 @@ class QRprufHome extends StatelessWidget {
     );
   }
 }
+	
