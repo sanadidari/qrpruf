@@ -9,17 +9,19 @@ class ControlCenterPage extends StatelessWidget {
       textDirection: TextDirection.rtl,
       child: Scaffold(
         backgroundColor: const Color(0xFFEAF3F2),
-        body: Center(
-          child: SizedBox(
-            width: 360,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                /// HEADER AVEC LOGO CORRECT
-                Image.asset('assets/images/header.png'),
-
-                Column(
+        body: SafeArea(
+          child: Center(
+            child: SingleChildScrollView(
+              child: SizedBox(
+                width: 360,
+                child: Column(
                   children: [
+                    /// HEADER
+                    Image.asset('assets/images/header.png'),
+
+                    const SizedBox(height: 12),
+
+                    /// TITRE
                     const Text(
                       'مركز التحكم التوثيقي',
                       style: TextStyle(
@@ -28,8 +30,24 @@ class ControlCenterPage extends StatelessWidget {
                         color: Color(0xFF5A9E96),
                       ),
                     ),
+
                     const SizedBox(height: 16),
 
+                    /// BOUTON RETOUR
+                    TextButton.icon(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      icon: const Icon(Icons.arrow_back),
+                      label: const Text('عودة'),
+                      style: TextButton.styleFrom(
+                        foregroundColor: const Color(0xFF5A9E96),
+                      ),
+                    ),
+
+                    const SizedBox(height: 8),
+
+                    /// GRILLE
                     GridView.count(
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),
@@ -49,6 +67,7 @@ class ControlCenterPage extends StatelessWidget {
 
                     const SizedBox(height: 16),
 
+                    /// BOUTONS CONTACT
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -57,12 +76,17 @@ class ControlCenterPage extends StatelessWidget {
                         Image.asset('assets/images/contact.png', width: 36),
                       ],
                     ),
+
+                    const SizedBox(height: 16),
+
+                    /// FOOTER
+                    Image.asset(
+                      'assets/images/footer.png',
+                      fit: BoxFit.cover,
+                    ),
                   ],
                 ),
-
-                /// FOOTER (MANQUANT → AJOUTÉ)
-                Image.asset('assets/images/footer.png'),
-              ],
+              ),
             ),
           ),
         ),
