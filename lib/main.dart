@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'dash1.dart';
 
 void main() {
   runApp(const QRprufApp());
@@ -45,12 +46,9 @@ class QRprufHome extends StatelessWidget {
       body: LayoutBuilder(
         builder: (context, constraints) {
           final width = constraints.maxWidth;
-
           final bool isMobile = width < 600;
-          final bool isTablet = width >= 600 && width < 1024;
           final bool isDesktop = width >= 1024;
 
-          /// largeur max UNIQUEMENT sur desktop
           final double maxContentWidth =
               isDesktop ? 1100 : double.infinity;
 
@@ -60,7 +58,9 @@ class QRprufHome extends StatelessWidget {
               Expanded(
                 child: Center(
                   child: ConstrainedBox(
-                    constraints: BoxConstraints(maxWidth: maxContentWidth),
+                    constraints: BoxConstraints(
+                      maxWidth: maxContentWidth,
+                    ),
                     child: FittedBox(
                       fit: BoxFit.scaleDown,
                       alignment: Alignment.topCenter,
@@ -69,7 +69,8 @@ class QRprufHome extends StatelessWidget {
                             ? width
                             : maxContentWidth,
                         child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          crossAxisAlignment:
+                              CrossAxisAlignment.stretch,
                           children: [
                             // HEADER
                             SizedBox(
@@ -97,11 +98,14 @@ class QRprufHome extends StatelessWidget {
                                   ),
                                   Row(
                                     children: [
-                                      _buildIcon('assets/images/ico1.png'),
+                                      _buildIcon(
+                                          'assets/images/ico1.png'),
                                       const SizedBox(width: 8),
-                                      _buildIcon('assets/images/ico2.png'),
+                                      _buildIcon(
+                                          'assets/images/ico2.png'),
                                       const SizedBox(width: 8),
-                                      _buildIcon('assets/images/ico3.png'),
+                                      _buildIcon(
+                                          'assets/images/ico3.png'),
                                     ],
                                   ),
                                 ],
@@ -111,26 +115,34 @@ class QRprufHome extends StatelessWidget {
                             // MAIN CARD
                             Padding(
                               padding: EdgeInsets.symmetric(
-                                  horizontal: isMobile ? 16 : 24),
+                                  horizontal:
+                                      isMobile ? 16 : 24),
                               child: Container(
-                                padding: const EdgeInsets.all(12),
+                                padding:
+                                    const EdgeInsets.all(12),
                                 decoration: BoxDecoration(
-                                  color: const Color(0xFFF5F5F5),
-                                  borderRadius: BorderRadius.circular(12),
+                                  color:
+                                      const Color(0xFFF5F5F5),
+                                  borderRadius:
+                                      BorderRadius.circular(12),
                                   border: Border.all(
-                                      color: const Color(0xFFE0E0E0)),
+                                    color: const Color(
+                                        0xFFE0E0E0),
+                                  ),
                                 ),
                                 child: Column(
                                   crossAxisAlignment:
                                       CrossAxisAlignment.start,
                                   children: [
                                     ClipRRect(
-                                      borderRadius: BorderRadius.circular(8),
+                                      borderRadius:
+                                          BorderRadius.circular(8),
                                       child: Image.asset(
                                         'assets/images/img_accueil.png',
                                         height:
                                             isMobile ? 140 : 180,
-                                        width: double.infinity,
+                                        width:
+                                            double.infinity,
                                         fit: BoxFit.cover,
                                       ),
                                     ),
@@ -140,7 +152,8 @@ class QRprufHome extends StatelessWidget {
                                       style: TextStyle(
                                         fontSize:
                                             isMobile ? 16 : 18,
-                                        fontWeight: FontWeight.w800,
+                                        fontWeight:
+                                            FontWeight.w800,
                                       ),
                                     ),
                                     const SizedBox(height: 6),
@@ -159,10 +172,11 @@ class QRprufHome extends StatelessWidget {
 
                             const SizedBox(height: 14),
 
-                            // SECTION
+                            // SECTION + CTA
                             Padding(
                               padding: EdgeInsets.symmetric(
-                                  horizontal: isMobile ? 16 : 24),
+                                  horizontal:
+                                      isMobile ? 16 : 24),
                               child: Column(
                                 children: [
                                   Text(
@@ -170,9 +184,10 @@ class QRprufHome extends StatelessWidget {
                                     style: TextStyle(
                                       fontSize:
                                           isMobile ? 18 : 22,
-                                      fontWeight: FontWeight.w800,
-                                      color:
-                                          const Color(0xFF62A098),
+                                      fontWeight:
+                                          FontWeight.w800,
+                                      color: const Color(
+                                          0xFF62A098),
                                     ),
                                     textAlign: TextAlign.center,
                                   ),
@@ -184,7 +199,9 @@ class QRprufHome extends StatelessWidget {
                                           'يستعرض الفيديو التوضيحي التالي كيف تعمل هذه الآلية بدقة',
                                           style: TextStyle(
                                             fontSize:
-                                                isMobile ? 11 : 13,
+                                                isMobile
+                                                    ? 11
+                                                    : 13,
                                           ),
                                         ),
                                       ),
@@ -200,10 +217,24 @@ class QRprufHome extends StatelessWidget {
                                     ],
                                   ),
                                   const SizedBox(height: 12),
-                                  Image.asset(
-                                    'assets/images/cta.png',
-                                    height: isMobile ? 55 : 65,
-                                    fit: BoxFit.cover,
+
+                                  /// CTA CLIQUABLE
+                                  GestureDetector(
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (_) =>
+                                              const Dash1Page(),
+                                        ),
+                                      );
+                                    },
+                                    child: Image.asset(
+                                      'assets/images/cta.png',
+                                      height:
+                                          isMobile ? 55 : 65,
+                                      fit: BoxFit.cover,
+                                    ),
                                   ),
                                 ],
                               ),
