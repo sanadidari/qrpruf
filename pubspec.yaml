@@ -19,10 +19,10 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
-  fonts:
-    - family: DSDigital
-      fonts:
-        - asset: assets/fonts/DS-DIGIT.ttf
+#  fonts:
+#    - family: DSDigital
+#      fonts:
+#        - asset: assets/fonts/DS-DIGIT.ttf
 
   assets:
     - assets/
