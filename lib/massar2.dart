@@ -40,7 +40,6 @@ class Massar2Page extends StatelessWidget {
                     Image.asset('assets/images/ico3.png', width: 22),
                   ],
                 ),
-
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
@@ -69,7 +68,6 @@ class Massar2Page extends StatelessWidget {
                     Image.asset('assets/images/flechy.png', height: 18),
                   ],
                 ),
-
                 Image.asset('assets/images/menu_deroul.png', width: 24),
               ],
             ),
@@ -81,95 +79,112 @@ class Massar2Page extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 18),
               child: Column(
                 children: [
-                  /// TITLE
-                  Container(
-                    width: double.infinity,
-                    margin: const EdgeInsets.symmetric(vertical: 18),
-                    padding: const EdgeInsets.symmetric(vertical: 14),
-                    color: const Color(0xFFEBF4F3),
-                    child: Column(
-                      children: [
-                        Text(
-                          'فضاء التوثيق الميداني',
-                          style: GoogleFonts.cairo(
-                            fontSize: 24,
-                            fontWeight: FontWeight.w700,
-                            color: const Color(0xFF0C8172),
+                  /// ===== TITLE (AUTO SIZE) =====
+                  Flexible(
+                    flex: 2,
+                    child: Container(
+                      width: double.infinity,
+                      margin: const EdgeInsets.symmetric(vertical: 12),
+                      padding: const EdgeInsets.symmetric(vertical: 10),
+                      color: const Color(0xFFEBF4F3),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          AutoSizeText(
+                            'فضاء التوثيق الميداني',
+                            maxLines: 1,
+                            minFontSize: 16,
+                            style: GoogleFonts.cairo(
+                              fontSize: 24,
+                              fontWeight: FontWeight.w700,
+                              color: const Color(0xFF0C8172),
+                            ),
                           ),
-                        ),
-                        Text(
-                          'للمفوض القضائي',
-                          style: GoogleFonts.cairo(
-                            fontSize: 22,
-                            fontWeight: FontWeight.w700,
-                            color: const Color(0xFF0C8172),
+                          AutoSizeText(
+                            'للمفوض القضائي',
+                            maxLines: 1,
+                            minFontSize: 14,
+                            style: GoogleFonts.cairo(
+                              fontSize: 22,
+                              fontWeight: FontWeight.w700,
+                              color: const Color(0xFF0C8172),
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
 
-                  /// ===== CONTENT (NO SCROLL) =====
+                  /// ===== CONTENT =====
                   Expanded(
+                    flex: 6,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [
-                            _autoParagraph(
-                              'تم تصميم نظام التوثيق الرقمي المبتكر QRpruf خصيصًا ليتماشى مع الاحتياجات الدقيقة للمفوضين القضائيين باعتبارهم من الفاعلين الأساسيين في توثيق الوقائع ذات القيمة القانونية.',
-                            ),
-                            const SizedBox(height: 10),
-                            _autoParagraph(
-                              'ويوفر هذا النظام أدوات احترافية للتوثيق الميداني تشمل إدراج المحاضر، حفظ المعاينات، تتبع المسارات الجغرافية، وتسجيل الوقائع بالصوت أو الصورة أو الفيديو في الزمن الحقيقي.',
-                            ),
-                            const SizedBox(height: 10),
-                            _autoParagraph(
-                              'ويعتمد QRpruf على آليات توثيق متقدمة تضمن نزاهة البيانات، مع ختم زمني ومكاني دقيق، وحماية ضد أي تعديل أو تلاعب لاحق.',
-                            ),
-                            const SizedBox(height: 10),
-                            _autoParagraph(
-                              'كما يسمح النظام بإنشاء محاضر رقمية جاهزة للتسليم وفق المعايير القانونية، مما يمكن المفوض القضائي من إنتاج دليل رقمي قوي يصلح للإدلاء به أمام الجهات المختصة بكل ثقة.',
-                            ),
-                          ],
+                        Flexible(
+                          flex: 4,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              _autoParagraph(
+                                'تم تصميم نظام التوثيق الرقمي المبتكر QRpruf خصيصًا ليتماشى مع الاحتياجات الدقيقة للمفوضين القضائيين باعتبارهم من الفاعلين الأساسيين في توثيق الوقائع ذات القيمة القانونية.',
+                              ),
+                              _autoParagraph(
+                                'ويوفر هذا النظام أدوات احترافية للتوثيق الميداني تشمل إدراج المحاضر، حفظ المعاينات، تتبع المسارات الجغرافية، وتسجيل الوقائع بالصوت أو الصورة أو الفيديو في الزمن الحقيقي.',
+                              ),
+                              _autoParagraph(
+                                'ويعتمد QRpruf على آليات توثيق متقدمة تضمن نزاهة البيانات، مع ختم زمني ومكاني دقيق، وحماية ضد أي تعديل أو تلاعب لاحق.',
+                              ),
+                              _autoParagraph(
+                                'كما يسمح النظام بإنشاء محاضر رقمية جاهزة للتسليم وفق المعايير القانونية، مما يمكن المفوض القضائي من إنتاج دليل رقمي قوي يصلح للإدلاء به أمام الجهات المختصة بكل ثقة.',
+                              ),
+                            ],
+                          ),
                         ),
 
-                        Column(
-                          children: [
-                            Text(
-                              'ابدأ الآن في اعتماد التوثيق المهني الذكي لترقي ممارساتك، وكن من الأوائل المستفيدين من المنصة المجانية.',
-                              textAlign: TextAlign.right,
-                              style: GoogleFonts.cairo(
-                                fontSize: 13,
-                                fontWeight: FontWeight.w600,
-                                color: const Color(0xFF0C8172),
-                                height: 1.7,
-                              ),
-                            ),
-                            const SizedBox(height: 16),
-                            Container(
-                              padding: const EdgeInsets.symmetric(
-                                vertical: 16,
-                                horizontal: 26,
-                              ),
-                              decoration: BoxDecoration(
-                                border: Border.all(
-                                  color: const Color(0xFFA7D6CF),
-                                ),
-                                borderRadius: BorderRadius.circular(14),
-                              ),
-                              child: Text(
-                                'محاضر رقمية… بحجية لا تُجادل',
+                        Flexible(
+                          flex: 2,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              AutoSizeText(
+                                'ابدأ الآن في اعتماد التوثيق المهني الذكي لترقي ممارساتك، وكن من الأوائل المستفيدين من المنصة المجانية.',
+                                textAlign: TextAlign.right,
+                                maxLines: 2,
+                                minFontSize: 10,
                                 style: GoogleFonts.cairo(
-                                  fontSize: 14,
+                                  fontSize: 13,
                                   fontWeight: FontWeight.w600,
                                   color: const Color(0xFF0C8172),
+                                  height: 1.6,
                                 ),
                               ),
-                            ),
-                          ],
+                              const SizedBox(height: 10),
+                              Container(
+                                padding: const EdgeInsets.symmetric(
+                                  vertical: 12,
+                                  horizontal: 22,
+                                ),
+                                decoration: BoxDecoration(
+                                  border: Border.all(
+                                    color: const Color(0xFFA7D6CF),
+                                  ),
+                                  borderRadius: BorderRadius.circular(14),
+                                ),
+                                child: AutoSizeText(
+                                  'محاضر رقمية… بحجية لا تُجادل',
+                                  maxLines: 1,
+                                  minFontSize: 10,
+                                  style: GoogleFonts.cairo(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w600,
+                                    color: const Color(0xFF0C8172),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ],
                     ),
@@ -177,7 +192,7 @@ class Massar2Page extends StatelessWidget {
 
                   /// NAV
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(30, 14, 30, 18),
+                    padding: const EdgeInsets.fromLTRB(30, 10, 30, 12),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -197,17 +212,19 @@ class Massar2Page extends StatelessWidget {
 
                   /// NOTE
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(12, 0, 12, 10),
+                    padding: const EdgeInsets.fromLTRB(12, 0, 12, 8),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Expanded(
-                          child: Text(
+                          child: AutoSizeText(
                             'ملاحظة: لا يحتفظ QRpruf بأي بيانات تعريفية أو بيومترية ضمن النظام، وتتم جميع عمليات التوثيق والتحقق بالاعتماد على أمان جهازك، دون تخزين أو معالجة لأي معطيات شخصية خارج الإطار القانوني الآمن.',
                             textAlign: TextAlign.right,
+                            maxLines: 3,
+                            minFontSize: 7,
                             style: GoogleFonts.cairo(
                               fontSize: 9,
-                              height: 1.4,
+                              height: 1.3,
                             ),
                           ),
                         ),
@@ -242,14 +259,17 @@ class Massar2Page extends StatelessWidget {
   }
 
   static Widget _autoParagraph(String text) {
-    return AutoSizeText(
-      text,
-      textAlign: TextAlign.right,
-      maxLines: 3,
-      minFontSize: 10,
-      style: GoogleFonts.cairo(
-        fontSize: 13,
-        height: 1.9,
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 6),
+      child: AutoSizeText(
+        text,
+        textAlign: TextAlign.right,
+        maxLines: 4,
+        minFontSize: 9,
+        style: GoogleFonts.cairo(
+          fontSize: 13,
+          height: 1.7,
+        ),
       ),
     );
   }
