@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'dash1.dart';
+
+import 'pages/dash1.dart';
 
 void main() {
   runApp(const QRprufApp());
@@ -218,14 +219,14 @@ class QRprufHome extends StatelessWidget {
                                   ),
                                   const SizedBox(height: 12),
 
-                                  /// CTA CLIQUABLE
+                                  /// CTA → DASHBOARD
                                   GestureDetector(
                                     onTap: () {
                                       Navigator.push(
                                         context,
                                         MaterialPageRoute(
                                           builder: (_) =>
-                                              const Dash1Page(),
+                                              Dash1Page(),
                                         ),
                                       );
                                     },
