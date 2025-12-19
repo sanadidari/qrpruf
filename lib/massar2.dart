@@ -45,11 +45,11 @@ class Massar2Page extends StatelessWidget {
               children: [
                 Row(
                   children: const [
-                    _TopIcon('assets/images/ico1.png'),
+                    TopIcon('assets/images/ico1.png'),
                     SizedBox(width: 8),
-                    _TopIcon('assets/images/ico2.png'),
+                    TopIcon('assets/images/ico2.png'),
                     SizedBox(width: 8),
-                    _TopIcon('assets/images/ico3.png'),
+                    TopIcon('assets/images/ico3.png'),
                   ],
                 ),
                 Row(
@@ -129,22 +129,22 @@ class Massar2Page extends StatelessWidget {
                     ),
                   ),
 
-                  /// CONTENT (CLAMPED)
+                  /// CONTENT
                   SizedBox(
                     height: 240,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: const [
-                        _Paragraph(
+                        ParagraphBlock(
                           'تم تصميم نظام التوثيق الرقمي المبتكر QRpruf خصيصًا ليتماشى مع الاحتياجات الدقيقة للمفوضين القضائيين باعتبارهم من الفاعلين الأساسيين في توثيق الوقائع ذات القيمة القانونية.',
                         ),
-                        _Paragraph(
+                        ParagraphBlock(
                           'ويوفر هذا النظام أدوات احترافية للتوثيق الميداني تشمل إدراج المحاضر، حفظ المعاينات، تتبع المسارات الجغرافية، وتسجيل الوقائع بالصوت أو الصورة أو الفيديو في الزمن الحقيقي.',
                         ),
-                        _Paragraph(
+                        ParagraphBlock(
                           'ويعتمد QRpruf على آليات توثيق متقدمة تضمن نزاهة البيانات، مع ختم زمني ومكاني دقيق، وحماية ضد أي تعديل أو تلاعب لاحق.',
                         ),
-                        _Paragraph(
+                        ParagraphBlock(
                           'كما يسمح النظام بإنشاء محاضر رقمية جاهزة للتسليم وفق المعايير القانونية، مما يمكن المفوض القضائي من إنتاج دليل رقمي قوي يصلح للإدلاء به أمام الجهات المختصة بكل ثقة.',
                         ),
                       ],
@@ -199,48 +199,14 @@ class Massar2Page extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: const [
-                        _NavBtn(
-                          img: 'assets/images/ic2.png',
-                          label: 'عودة',
-                        ),
-                        _NavBtn(
-                          img: 'assets/images/ic3.png',
-                          label: 'التالي',
-                        ),
+                        NavBtn(img: 'assets/images/ic2.png', label: 'عودة'),
+                        NavBtn(img: 'assets/images/ic3.png', label: 'التالي'),
                       ],
                     ),
                   ),
 
-                  /// NOTE
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(12, 0, 12, 18),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Expanded(
-                          child: AutoSizeText(
-                            'ملاحظة: لا يحتفظ QRpruf بأي بيانات تعريفية أو بيومترية ضمن النظام، وتتم جميع عمليات التوثيق والتحقق بالاعتماد على أمان جهازك، دون تخزين أو معالجة لأي معطيات شخصية خارج الإطار القانوني الآمن.',
-                            textAlign: TextAlign.right,
-                            maxLines: 3,
-                            minFontSize: 7,
-                            overflow: TextOverflow.ellipsis,
-                            style: GoogleFonts.cairo(
-                              fontSize: 9,
-                              height: 1.4,
-                            ),
-                          ),
-                        ),
-                        const SizedBox(width: 10),
-                        Column(
-                          children: const [
-                            _NoteIcon('assets/images/whatsy.png'),
-                            SizedBox(height: 6),
-                            _NoteIcon('assets/images/helpy.png'),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
+                  /// NOTE (OBLIGATOIRE)
+                  const NoteBlock(),
                 ],
               ),
             ),
@@ -270,22 +236,18 @@ class Massar2Page extends StatelessWidget {
   }
 }
 
-/// ===== SUB WIDGETS =====
+/// ===== COMPONENTS =====
 
-class _TopIcon extends StatelessWidget {
+class TopIcon extends StatelessWidget {
   final String src;
-  const _TopIcon(this.src);
-
+  const TopIcon(this.src, {super.key});
   @override
-  Widget build(BuildContext context) {
-    return Image.asset(src, width: 22);
-  }
+  Widget build(BuildContext context) => Image.asset(src, width: 22);
 }
 
-class _Paragraph extends StatelessWidget {
+class ParagraphBlock extends StatelessWidget {
   final String text;
-  const _Paragraph(this.text);
-
+  const ParagraphBlock(this.text, {super.key});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -296,20 +258,16 @@ class _Paragraph extends StatelessWidget {
         maxLines: 2,
         minFontSize: 10,
         overflow: TextOverflow.ellipsis,
-        style: GoogleFonts.cairo(
-          fontSize: 13,
-          height: 1.9,
-        ),
+        style: GoogleFonts.cairo(fontSize: 13, height: 1.9),
       ),
     );
   }
 }
 
-class _NavBtn extends StatelessWidget {
+class NavBtn extends StatelessWidget {
   final String img;
   final String label;
-  const _NavBtn({required this.img, required this.label});
-
+  const NavBtn({required this.img, required this.label, super.key});
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -322,12 +280,36 @@ class _NavBtn extends StatelessWidget {
   }
 }
 
-class _NoteIcon extends StatelessWidget {
-  final String src;
-  const _NoteIcon(this.src);
+class NoteBlock extends StatelessWidget {
+  const NoteBlock({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Image.asset(src, width: 22);
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(12, 0, 12, 18),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Expanded(
+            child: AutoSizeText(
+              'ملاحظة: لا يحتفظ QRpruf بأي بيانات تعريفية أو بيومترية ضمن النظام، وتتم جميع عمليات التوثيق والتحقق بالاعتماد على أمان جهازك، دون تخزين أو معالجة لأي معطيات شخصية خارج الإطار القانوني الآمن.',
+              textAlign: TextAlign.right,
+              maxLines: 3,
+              minFontSize: 7,
+              overflow: TextOverflow.ellipsis,
+              style: GoogleFonts.cairo(fontSize: 9, height: 1.4),
+            ),
+          ),
+          const SizedBox(width: 10),
+          Column(
+            children: [
+              Image.asset('assets/images/whatsy.png', width: 22),
+              const SizedBox(height: 6),
+              Image.asset('assets/images/helpy.png', width: 22),
+            ],
+          ),
+        ],
+      ),
+    );
   }
 }
