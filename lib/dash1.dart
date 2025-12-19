@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'page3.dart'; // 👈 ajout UNIQUE
+import 'massar1.dart'; // 👈 ajout UNIQUE
 
 class Dash1Page extends StatelessWidget {
   const Dash1Page({super.key});
@@ -18,7 +18,7 @@ class Dash1Page extends StatelessWidget {
             height: _headerHeight,
             width: double.infinity,
             child: Image.asset(
-              'assets/images/header.png',
+              'assets/images/header_sec.png',
               fit: BoxFit.cover,
             ),
           ),
