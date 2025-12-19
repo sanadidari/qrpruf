@@ -1,38 +1,64 @@
-# === FLUTTER BUILD OUTPUTS ===
-build/
+# =========================
+# FLUTTER / DART (QRpruf)
+# =========================
+
+# Tooling & cache
 .dart_tool/
-.flutter-plugins-dependencies
 .flutter-plugins
+.flutter-plugins-dependencies
 .packages
 
-# === TEMPORARY & GENERATED FILES ===
-*.dill
-*.tmp
-*.lock
-*.log
-*.DS_Store
+# Build outputs (NEVER COMMIT)
+build/
 
-# === IDEs ===
+# Explicit Flutter internals safety lock
+.dart_tool/flutter_build/
+
+# Generated Dart
+*.dill
+
+# =========================
+# FLUTTER WEB (generated)
+# =========================
+
+web_plugin_registrant.dart
+
+# =========================
+# IDE
+# =========================
+
 .vscode/
 .idea/
+*.iml
 
-# === OS-SPECIFIC FILES ===
+# =========================
+# OS
+# =========================
+
+.DS_Store
 Thumbs.db
-ehthumbs.db
 Desktop.ini
 
-# === FLUTTER PLATFORM-SPECIFIC BUILD DIRS ===
+# =========================
+# TEMP / LOGS
+# =========================
+
+*.log
+*.tmp
+*.orig
+
+# =========================
+# VERCEL
+# =========================
+
+.vercel/
+.vercel/output/
+
+# =========================
+# PLATFORM GENERATED (Flutter)
+# =========================
+
 ios/Flutter/
 macos/Flutter/
 windows/Flutter/
 linux/flutter/
-
-# === VERCEL ===
-.vercel/
-.vercel/output/
-
-# === GIT CONFLICT BACKUP FILES ===
-*.orig
-
-# === OTHERS ===
-pubspec.lock
