@@ -3,6 +3,11 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../layout/page_template.dart';
 import '../blocks/topbar_block.dart';
+import '../blocks/title_block.dart';
+import '../blocks/paragraph_block.dart';
+import '../blocks/quote_block.dart';
+import '../blocks/note_block.dart';
+import '../blocks/nav_block.dart';
 
 import 'massar1_page.dart';
 import 'massar2_page.dart';
