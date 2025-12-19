@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../layout/page_template.dart';
+import '../blocks/topbar_block.dart';
 import '../blocks/title_block.dart';
 import '../blocks/paragraph_block.dart';
 import '../blocks/quote_block.dart';
@@ -33,6 +34,9 @@ class Massar4Page extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 18),
         child: Column(
           children: [
+            /// ✅ TOP BAR UNIFIÉE
+            const TopBarBlock(),
+
             const TitleBlock(
               title: 'فضاء التوثيق القضائي',
               subtitle: '',
@@ -44,10 +48,10 @@ class Massar4Page extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   ParagraphBlock(
-                    'يوفر QRpruf فضاءً مخصصًا للتوثيق القضائي، يمكن من خلاله إنشاء محاضر رقمية ذات حجية قانونية، مع ضمان سلامة البيانات وتكاملها وفق المعايير المعتمدة.',
+                    'محاضر رقمية بحجية قانونية.',
                   ),
                   ParagraphBlock(
-                    'تم تصميم هذا الفضاء ليخدم مختلف الفاعلين في المجال القضائي، مع توفير أدوات توثيق متقدمة، وختم زمني ومكاني، وآليات تحقق دقيقة.',
+                    'ختم زمني ومكاني وآليات تحقق دقيقة.',
                   ),
                 ],
               ),
@@ -55,9 +59,7 @@ class Massar4Page extends StatelessWidget {
 
             const SizedBox(height: 16),
 
-            const QuoteBlock(
-              'التوثيق القضائي… دقة، نزاهة، وحجية',
-            ),
+            const QuoteBlock('الدقة أساس العدالة'),
 
             const Spacer(),
 
@@ -67,7 +69,7 @@ class Massar4Page extends StatelessWidget {
             ),
 
             const NoteBlock(
-              'ملاحظة: جميع عمليات التوثيق داخل فضاء QRpruf تتم باحترام القوانين الجاري بها العمل، دون تخزين أي معطيات شخصية خارج الإطار القانوني الآمن.',
+              'ملاحظة: يتم احترام جميع القوانين المعمول بها.',
             ),
           ],
         ),
