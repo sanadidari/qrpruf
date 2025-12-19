@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'pages/massar1_page.dart';
-import 'pages/massar2_page.dart';
-import 'pages/massar3_page.dart';
-import 'pages/massar4_page.dart';
+import 'massar1_page.dart';
+import 'massar2_page.dart';
+import 'massar3_page.dart';
+import 'massar4_page.dart';
 
 class Dash1Page extends StatelessWidget {
   const Dash1Page({super.key});
@@ -136,80 +136,24 @@ class Dash1Page extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            /// BTN 1 → Massar3Page
-                            GestureDetector(
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (_) => Massar3Page(),
-                                  ),
-                                );
-                              },
-                              child: Image.asset(
-                                'assets/images/btn_icon1.png',
-                                width: 95,
-                                height: 90,
-                              ),
-                            ),
-
-                            /// BTN 2 → Massar4Page
-                            GestureDetector(
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (_) => Massar4Page(),
-                                  ),
-                                );
-                              },
-                              child: Image.asset(
-                                'assets/images/btn_icon2.png',
-                                width: 95,
-                                height: 90,
-                              ),
-                            ),
-
-                            Image.asset(
-                              'assets/images/btn_icon3.png',
-                              width: 95,
-                              height: 90,
-                            ),
+                            _navBtn(context, 'assets/images/btn_icon1.png',
+                                const Massar1Page()),
+                            _navBtn(context, 'assets/images/btn_icon2.png',
+                                const Massar2Page()),
+                            Image.asset('assets/images/btn_icon3.png',
+                                width: 95, height: 90),
                           ],
                         ),
-
                         const SizedBox(height: 8),
-
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            /// BTN 4 → Massar3Page
-                            GestureDetector(
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (_) => Massar3Page(),
-                                  ),
-                                );
-                              },
-                              child: Image.asset(
-                                'assets/images/btn_icon4.png',
-                                width: 95,
-                                height: 90,
-                              ),
-                            ),
-
-                            Image.asset(
-                              'assets/images/btn_icon5.png',
-                              width: 95,
-                              height: 90,
-                            ),
-                            Image.asset(
-                              'assets/images/btn_icon6.png',
-                              width: 95,
-                              height: 90,
-                            ),
+                            _navBtn(context, 'assets/images/btn_icon4.png',
+                                const Massar3Page()),
+                            Image.asset('assets/images/btn_icon5.png',
+                                width: 95, height: 90),
+                            Image.asset('assets/images/btn_icon6.png',
+                                width: 95, height: 90),
                           ],
                         ),
                       ],
@@ -236,7 +180,7 @@ class Dash1Page extends StatelessWidget {
                         const SizedBox(width: 10),
                         Expanded(
                           child: Text(
-                            'ملاحظة: لا يحتفظ QRpruf بأي بيانات تعريفية أو بيومترية ضمن مركز التحكم، وتتم جميع عمليات التوثيق والتحقق بالاعتماد على أمان جهازك، دون تخزين أو معالجة لأي معطيات شخصية خارج الإطار القانوني الآمن.',
+                            'ملاحظة: لا يحتفظ QRpruf بأي بيانات تعريفية أو بيومترية ضمن مركز التحكم، وتتم جميع عمليات التوثيق والتحقق بالاعتماد على أمان جهازك.',
                             textAlign: TextAlign.right,
                             style: GoogleFonts.cairo(
                               fontSize: 9,
@@ -265,6 +209,18 @@ class Dash1Page extends StatelessWidget {
       ),
     );
   }
+
+  Widget _navBtn(BuildContext context, String asset, Widget page) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (_) => page),
+        );
+      },
+      child: Image.asset(asset, width: 95, height: 90),
+    );
+  }
 }
 
 class _LoginBlock extends StatelessWidget {
@@ -281,22 +237,12 @@ class _LoginBlock extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.end,
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text(
-                'إنشاء حساب',
-                style: GoogleFonts.cairo(
-                  fontSize: 10,
-                  color: Colors.grey,
-                  height: 1.05,
-                ),
-              ),
-              Text(
-                'تسجيل الدخول',
-                style: GoogleFonts.cairo(
-                  fontSize: 12,
-                  fontWeight: FontWeight.bold,
-                  height: 1.05,
-                ),
-              ),
+              Text('إنشاء حساب',
+                  style: GoogleFonts.cairo(
+                      fontSize: 10, color: Colors.grey)),
+              Text('تسجيل الدخول',
+                  style: GoogleFonts.cairo(
+                      fontSize: 12, fontWeight: FontWeight.bold)),
             ],
           ),
           const SizedBox(width: 6),
