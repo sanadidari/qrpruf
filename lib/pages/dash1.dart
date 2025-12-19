@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'pages/massar1_page.dart';
+import 'pages/massar2_page.dart';
 import 'pages/massar3_page.dart';
 import 'pages/massar4_page.dart';
 
