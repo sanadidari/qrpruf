@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'page3.dart'; // 👈 ajout UNIQUE
 
 class Dash1Page extends StatelessWidget {
   const Dash1Page({super.key});
@@ -13,24 +14,21 @@ class Dash1Page extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Column(
         children: [
-          /// ================= HEADER (IMAGE UNIQUE) =================
           SizedBox(
             height: _headerHeight,
             width: double.infinity,
             child: Image.asset(
-              'assets/images/header.png', // image complète (logo + slogan)
+              'assets/images/header.png',
               fit: BoxFit.cover,
             ),
           ),
 
-          /// ================= CONTENT =================
           Expanded(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 6),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  /// -------- TOP BAR --------
                   Padding(
                     padding: const EdgeInsets.only(
                       top: 20,
@@ -47,10 +45,8 @@ class Dash1Page extends StatelessWidget {
                           height: 24,
                         ),
 
-                        /// LOGIN BLOCK (flèche alignée à la 2e ligne)
                         _LoginBlock(),
 
-                        /// ICONES
                         Row(
                           children: [
                             Image.asset('assets/images/ico1.png',
@@ -69,7 +65,6 @@ class Dash1Page extends StatelessWidget {
 
                   const SizedBox(height: 24),
 
-                  /// -------- TITLE --------
                   Container(
                     width: double.infinity,
                     color: const Color(0xFFEBF4F3),
@@ -112,7 +107,6 @@ class Dash1Page extends StatelessWidget {
 
                   const SizedBox(height: 16),
 
-                  /// -------- HR (200px centré) --------
                   Center(
                     child: Container(
                       width: 200,
@@ -123,7 +117,7 @@ class Dash1Page extends StatelessWidget {
 
                   const SizedBox(height: 18),
 
-                  /// -------- BUTTONS --------
+                  /// ======== BUTTONS ========
                   Container(
                     margin: const EdgeInsets.symmetric(horizontal: 10),
                     padding: const EdgeInsets.all(10),
@@ -132,17 +126,43 @@ class Dash1Page extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Column(
-                      children: const [
-                        _BtnRow(
-                          'assets/images/btn_icon1.png',
-                          'assets/images/btn_icon2.png',
-                          'assets/images/btn_icon3.png',
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            /// 🔗 SEUL CHANGEMENT : lien vers page3
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (_) => const Page3Page(),
+                                  ),
+                                );
+                              },
+                              child: Image.asset(
+                                'assets/images/btn_icon1.png',
+                                width: 95,
+                                height: 90,
+                              ),
+                            ),
+                            Image.asset('assets/images/btn_icon2.png',
+                                width: 95, height: 90),
+                            Image.asset('assets/images/btn_icon3.png',
+                                width: 95, height: 90),
+                          ],
                         ),
-                        SizedBox(height: 8),
-                        _BtnRow(
-                          'assets/images/btn_icon4.png',
-                          'assets/images/btn_icon5.png',
-                          'assets/images/btn_icon6.png',
+                        const SizedBox(height: 8),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Image.asset('assets/images/btn_icon4.png',
+                                width: 95, height: 90),
+                            Image.asset('assets/images/btn_icon5.png',
+                                width: 95, height: 90),
+                            Image.asset('assets/images/btn_icon6.png',
+                                width: 95, height: 90),
+                          ],
                         ),
                       ],
                     ),
@@ -150,47 +170,28 @@ class Dash1Page extends StatelessWidget {
 
                   const Spacer(),
 
-                  /// -------- NOTE + 2 ICONES (ensemble à gauche) --------
                   Padding(
                     padding: const EdgeInsets.fromLTRB(10, 0, 10, 10),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        /// Colonne icônes à gauche (whats + help)
                         Column(
                           children: [
-                            Image.asset(
-                              'assets/images/whatsy.png',
-                              width: 22,
-                              height: 22,
-                            ),
+                            Image.asset('assets/images/whatsy.png',
+                                width: 22),
                             const SizedBox(height: 6),
-                            Image.asset(
-                              'assets/images/helpy.png',
-                              width: 22,
-                              height: 22,
-                            ),
+                            Image.asset('assets/images/helpy.png',
+                                width: 22),
                           ],
                         ),
                         const SizedBox(width: 10),
-
-                        /// Texte (avec le ? au début, côté droit en RTL)
                         Expanded(
-                          child: RichText(
+                          child: Text(
+                            'ملاحظة: لا يحتفظ QRpruf بأي بيانات تعريفية أو بيومترية ضمن مركز التحكم، وتتم جميع عمليات التوثيق والتحقق بالاعتماد على أمان جهازك، دون تخزين أو معالجة لأي معطيات شخصية خارج الإطار القانوني الآمن.',
                             textAlign: TextAlign.right,
-                            text: TextSpan(
-                              style: GoogleFonts.cairo(
-                                fontSize: 9,
-                                height: 1.4,
-                                color: Colors.black,
-                              ),
-                              children: const [
-                                TextSpan(text: '؟  '),
-                                TextSpan(
-                                  text:
-                                      'ملاحظة: لا يحتفظ QRpruf بأي بيانات تعريفية أو بيومترية ضمن مركز التحكم، وتتم جميع عمليات التوثيق والتحقق بالاعتماد على أمان جهازك، دون تخزين أو معالجة لأي معطيات شخصية خارج الإطار القانوني الآمن.',
-                                ),
-                              ],
+                            style: GoogleFonts.cairo(
+                              fontSize: 9,
+                              height: 1.4,
                             ),
                           ),
                         ),
@@ -202,7 +203,6 @@ class Dash1Page extends StatelessWidget {
             ),
           ),
 
-          /// ================= FOOTER =================
           SizedBox(
             height: _footerHeight,
             width: double.infinity,
@@ -222,23 +222,17 @@ class _LoginBlock extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Hauteur fixe pour pouvoir aligner la flèche exactement sur la 2e ligne
-    const double blockHeight = 28;
-
     return SizedBox(
-      height: blockHeight,
+      height: 28,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          // Textes alignés à droite
           Column(
-            mainAxisAlignment: MainAxisAlignment.end,
             crossAxisAlignment: CrossAxisAlignment.end,
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
                 'إنشاء حساب',
-                textAlign: TextAlign.right,
                 style: GoogleFonts.cairo(
                   fontSize: 10,
                   color: Colors.grey.shade600,
@@ -247,7 +241,6 @@ class _LoginBlock extends StatelessWidget {
               ),
               Text(
                 'تسجيل الدخول',
-                textAlign: TextAlign.right,
                 style: GoogleFonts.cairo(
                   fontSize: 12,
                   fontWeight: FontWeight.bold,
@@ -257,35 +250,9 @@ class _LoginBlock extends StatelessWidget {
             ],
           ),
           const SizedBox(width: 6),
-
-          // Flèche alignée sur la 2e ligne (bas du bloc)
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Image.asset(
-              'assets/images/flechy.png',
-              width: 18,
-              height: 18,
-            ),
-          ),
+          Image.asset('assets/images/flechy.png', width: 18),
         ],
       ),
-    );
-  }
-}
-
-class _BtnRow extends StatelessWidget {
-  final String a, b, c;
-  const _BtnRow(this.a, this.b, this.c);
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Image.asset(a, width: 95, height: 90),
-        Image.asset(b, width: 95, height: 90),
-        Image.asset(c, width: 95, height: 90),
-      ],
     );
   }
 }
