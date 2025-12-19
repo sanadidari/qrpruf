@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class Massar2Page extends StatelessWidget {
   const Massar2Page({super.key});
@@ -30,7 +31,6 @@ class Massar2Page extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                /// ICONS
                 Row(
                   children: [
                     Image.asset('assets/images/ico1.png', width: 22),
@@ -41,13 +41,11 @@ class Massar2Page extends StatelessWidget {
                   ],
                 ),
 
-                /// LOGIN
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
-                      mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
                           'إنشاء حساب',
@@ -68,18 +66,11 @@ class Massar2Page extends StatelessWidget {
                       ],
                     ),
                     const SizedBox(width: 6),
-                    Image.asset(
-                      'assets/images/flechy.png',
-                      height: 18,
-                    ),
+                    Image.asset('assets/images/flechy.png', height: 18),
                   ],
                 ),
 
-                /// MENU
-                Image.asset(
-                  'assets/images/menu_deroul.png',
-                  width: 24,
-                ),
+                Image.asset('assets/images/menu_deroul.png', width: 24),
               ],
             ),
           ),
@@ -100,7 +91,6 @@ class Massar2Page extends StatelessWidget {
                       children: [
                         Text(
                           'فضاء التوثيق الميداني',
-                          textAlign: TextAlign.center,
                           style: GoogleFonts.cairo(
                             fontSize: 24,
                             fontWeight: FontWeight.w700,
@@ -109,7 +99,6 @@ class Massar2Page extends StatelessWidget {
                         ),
                         Text(
                           'للمفوض القضائي',
-                          textAlign: TextAlign.center,
                           style: GoogleFonts.cairo(
                             fontSize: 22,
                             fontWeight: FontWeight.w700,
@@ -120,34 +109,33 @@ class Massar2Page extends StatelessWidget {
                     ),
                   ),
 
-                  /// CONTENT (NO SCROLL)
+                  /// ===== CONTENT (NO SCROLL) =====
                   Expanded(
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
-                            _paragraph(
+                            _autoParagraph(
                               'تم تصميم نظام التوثيق الرقمي المبتكر QRpruf خصيصًا ليتماشى مع الاحتياجات الدقيقة للمفوضين القضائيين باعتبارهم من الفاعلين الأساسيين في توثيق الوقائع ذات القيمة القانونية.',
                             ),
-                            const SizedBox(height: 12),
-                            _paragraph(
+                            const SizedBox(height: 10),
+                            _autoParagraph(
                               'ويوفر هذا النظام أدوات احترافية للتوثيق الميداني تشمل إدراج المحاضر، حفظ المعاينات، تتبع المسارات الجغرافية، وتسجيل الوقائع بالصوت أو الصورة أو الفيديو في الزمن الحقيقي.',
                             ),
-                            const SizedBox(height: 12),
-                            _paragraph(
+                            const SizedBox(height: 10),
+                            _autoParagraph(
                               'ويعتمد QRpruf على آليات توثيق متقدمة تضمن نزاهة البيانات، مع ختم زمني ومكاني دقيق، وحماية ضد أي تعديل أو تلاعب لاحق.',
                             ),
-                            const SizedBox(height: 12),
-                            _paragraph(
+                            const SizedBox(height: 10),
+                            _autoParagraph(
                               'كما يسمح النظام بإنشاء محاضر رقمية جاهزة للتسليم وفق المعايير القانونية، مما يمكن المفوض القضائي من إنتاج دليل رقمي قوي يصلح للإدلاء به أمام الجهات المختصة بكل ثقة.',
                             ),
                           ],
                         ),
 
-                        /// CTA + QUOTE
                         Column(
                           children: [
                             Text(
@@ -160,7 +148,7 @@ class Massar2Page extends StatelessWidget {
                                 height: 1.7,
                               ),
                             ),
-                            const SizedBox(height: 18),
+                            const SizedBox(height: 16),
                             Container(
                               padding: const EdgeInsets.symmetric(
                                 vertical: 16,
@@ -226,15 +214,9 @@ class Massar2Page extends StatelessWidget {
                         const SizedBox(width: 10),
                         Column(
                           children: [
-                            Image.asset(
-                              'assets/images/whatsy.png',
-                              width: 22,
-                            ),
+                            Image.asset('assets/images/whatsy.png', width: 22),
                             const SizedBox(height: 6),
-                            Image.asset(
-                              'assets/images/helpy.png',
-                              width: 22,
-                            ),
+                            Image.asset('assets/images/helpy.png', width: 22),
                           ],
                         ),
                       ],
@@ -259,10 +241,12 @@ class Massar2Page extends StatelessWidget {
     );
   }
 
-  static Widget _paragraph(String text) {
-    return Text(
+  static Widget _autoParagraph(String text) {
+    return AutoSizeText(
       text,
       textAlign: TextAlign.right,
+      maxLines: 3,
+      minFontSize: 10,
       style: GoogleFonts.cairo(
         fontSize: 13,
         height: 1.9,
@@ -281,10 +265,7 @@ class Massar2Page extends StatelessWidget {
         children: [
           Image.asset(img, width: 48, height: 48),
           const SizedBox(height: 6),
-          Text(
-            label,
-            style: GoogleFonts.cairo(fontSize: 11),
-          ),
+          Text(label, style: GoogleFonts.cairo(fontSize: 11)),
         ],
       ),
     );
