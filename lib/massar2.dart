@@ -20,14 +20,16 @@ class Massar2Page extends StatelessWidget {
           final scale =
               (constraints.maxHeight / _designHeight).clamp(0.75, 1.0);
 
-          return Center(
-            child: Transform.scale(
-              scale: scale,
+          return ClipRect(
+            child: Align(
               alignment: Alignment.topCenter,
-              child: SizedBox(
-                width: constraints.maxWidth,
-                height: _designHeight,
-                child: _buildContent(context),
+              child: Transform.scale(
+                scale: scale,
+                alignment: Alignment.topCenter,
+                child: SizedBox(
+                  width: constraints.maxWidth,
+                  child: _buildContent(context),
+                ),
               ),
             ),
           );
