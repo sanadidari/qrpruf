@@ -136,24 +136,45 @@ class Dash1Page extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            _navBtn(context, 'assets/images/btn_icon1.png',
-                                const Massar1Page()),
-                            _navBtn(context, 'assets/images/btn_icon2.png',
-                                const Massar2Page()),
-                            Image.asset('assets/images/btn_icon3.png',
-                                width: 95, height: 90),
+                            _navBtn(
+                              context,
+                              'assets/images/btn_icon1.png',
+                              Massar1Page(),
+                            ),
+                            _navBtn(
+                              context,
+                              'assets/images/btn_icon2.png',
+                              Massar2Page(),
+                            ),
+                            /// ✅ BTN 3 → Massar3Page (FIX)
+                            _navBtn(
+                              context,
+                              'assets/images/btn_icon3.png',
+                              Massar3Page(),
+                            ),
                           ],
                         ),
+
                         const SizedBox(height: 8),
+
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            _navBtn(context, 'assets/images/btn_icon4.png',
-                                const Massar3Page()),
-                            Image.asset('assets/images/btn_icon5.png',
-                                width: 95, height: 90),
-                            Image.asset('assets/images/btn_icon6.png',
-                                width: 95, height: 90),
+                            _navBtn(
+                              context,
+                              'assets/images/btn_icon4.png',
+                              Massar3Page(),
+                            ),
+                            Image.asset(
+                              'assets/images/btn_icon5.png',
+                              width: 95,
+                              height: 90,
+                            ),
+                            Image.asset(
+                              'assets/images/btn_icon6.png',
+                              width: 95,
+                              height: 90,
+                            ),
                           ],
                         ),
                       ],

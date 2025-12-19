@@ -1,314 +1,168 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:auto_size_text/auto_size_text.dart';
+
+import '../layout/page_template.dart';
+import '../blocks/title_block.dart';
+import '../blocks/paragraph_block.dart';
+import '../blocks/quote_block.dart';
+import '../blocks/note_block.dart';
+import '../blocks/nav_block.dart';
 
 class Massar2Page extends StatelessWidget {
   const Massar2Page({super.key});
 
-  static const double _headerVisualHeight = 70;
-  static const double _footerVisualHeight = 40;
-
   @override
   Widget build(BuildContext context) {
-    final topSafe = MediaQuery.of(context).viewPadding.top;
-    final bottomSafe = MediaQuery.of(context).viewPadding.bottom;
+    return PageTemplate(
+      // ===== HEADER =====
+      header: SizedBox(
+        height: 70,
+        width: double.infinity,
+        child: Image.asset(
+          'assets/images/header_sec.png',
+          fit: BoxFit.cover,
+        ),
+      ),
 
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Column(
-        children: [
-          /// ===== HEADER =====
-          SizedBox(
-            height: _headerVisualHeight + topSafe,
-            width: double.infinity,
-            child: Column(
-              children: [
-                SizedBox(height: topSafe),
-                SizedBox(
-                  height: _headerVisualHeight,
-                  width: double.infinity,
-                  child: Image.asset(
-                    'assets/images/header_sec.png',
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ],
-            ),
-          ),
+      // ===== FOOTER =====
+      footer: SizedBox(
+        height: 40,
+        width: double.infinity,
+        child: Image.asset(
+          'assets/images/footer.png',
+          fit: BoxFit.cover,
+        ),
+      ),
 
-          /// ===== TOP BAR =====
-          Padding(
-            padding: const EdgeInsets.fromLTRB(14, 14, 14, 10),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                Row(
-                  children: const [
-                    TopIcon('assets/images/ico1.png'),
-                    SizedBox(width: 8),
-                    TopIcon('assets/images/ico2.png'),
-                    SizedBox(width: 8),
-                    TopIcon('assets/images/ico3.png'),
-                  ],
-                ),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        Text(
-                          'إنشاء حساب',
-                          style: GoogleFonts.cairo(
-                            fontSize: 10,
-                            color: Colors.grey,
-                            height: 1.1,
-                          ),
-                        ),
-                        Text(
-                          'تسجيل الدخول',
-                          style: GoogleFonts.cairo(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w700,
-                            height: 1.1,
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(width: 6),
-                    Image.asset(
-                      'assets/images/flechy.png',
-                      height: 18,
-                    ),
-                  ],
-                ),
-                Image.asset(
-                  'assets/images/menu_deroul.png',
-                  width: 24,
-                ),
-              ],
-            ),
-          ),
-
-          /// ===== BODY =====
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 18),
-              child: Column(
+      // ===== BODY =====
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 18),
+        child: Column(
+          children: [
+            // ===== TOP BAR =====
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 14),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  /// TITLE
-                  Container(
-                    width: double.infinity,
-                    margin: const EdgeInsets.symmetric(vertical: 24),
-                    padding: const EdgeInsets.symmetric(vertical: 14),
-                    color: const Color(0xFFEBF4F3),
-                    child: Column(
-                      children: [
-                        AutoSizeText(
-                          'فضاء التوثيق الميداني',
-                          maxLines: 1,
-                          minFontSize: 16,
-                          style: GoogleFonts.cairo(
-                            fontSize: 24,
-                            fontWeight: FontWeight.w700,
-                            color: const Color(0xFF0C8172),
+                  // ICONS
+                  Row(
+                    children: [
+                      Image.asset('assets/images/ico1.png', width: 22),
+                      const SizedBox(width: 8),
+                      Image.asset('assets/images/ico2.png', width: 22),
+                      const SizedBox(width: 8),
+                      Image.asset('assets/images/ico3.png', width: 22),
+                    ],
+                  ),
+
+                  // LOGIN
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: const [
+                          Text(
+                            'إنشاء حساب',
+                            style: TextStyle(
+                              fontSize: 10,
+                              color: Colors.grey,
+                              height: 1.1,
+                            ),
                           ),
-                        ),
-                        AutoSizeText(
-                          'للمفوض القضائي',
-                          maxLines: 1,
-                          minFontSize: 14,
-                          style: GoogleFonts.cairo(
-                            fontSize: 22,
-                            fontWeight: FontWeight.w700,
-                            color: const Color(0xFF0C8172),
+                          Text(
+                            'تسجيل الدخول',
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w700,
+                              height: 1.1,
+                            ),
                           ),
-                        ),
-                      ],
-                    ),
-                  ),
-
-                  /// CONTENT
-                  SizedBox(
-                    height: 240,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: const [
-                        ParagraphBlock(
-                          'تم تصميم نظام التوثيق الرقمي المبتكر QRpruf خصيصًا ليتماشى مع الاحتياجات الدقيقة للمفوضين القضائيين باعتبارهم من الفاعلين الأساسيين في توثيق الوقائع ذات القيمة القانونية.',
-                        ),
-                        ParagraphBlock(
-                          'ويوفر هذا النظام أدوات احترافية للتوثيق الميداني تشمل إدراج المحاضر، حفظ المعاينات، تتبع المسارات الجغرافية، وتسجيل الوقائع بالصوت أو الصورة أو الفيديو في الزمن الحقيقي.',
-                        ),
-                        ParagraphBlock(
-                          'ويعتمد QRpruf على آليات توثيق متقدمة تضمن نزاهة البيانات، مع ختم زمني ومكاني دقيق، وحماية ضد أي تعديل أو تلاعب لاحق.',
-                        ),
-                        ParagraphBlock(
-                          'كما يسمح النظام بإنشاء محاضر رقمية جاهزة للتسليم وفق المعايير القانونية، مما يمكن المفوض القضائي من إنتاج دليل رقمي قوي يصلح للإدلاء به أمام الجهات المختصة بكل ثقة.',
-                        ),
-                      ],
-                    ),
-                  ),
-
-                  const SizedBox(height: 18),
-
-                  /// CTA
-                  AutoSizeText(
-                    'ابدأ الآن في اعتماد التوثيق المهني الذكي لترقي ممارساتك، وكن من الأوائل المستفيدين من المنصة المجانية.',
-                    textAlign: TextAlign.right,
-                    maxLines: 2,
-                    minFontSize: 10,
-                    style: GoogleFonts.cairo(
-                      fontSize: 13,
-                      fontWeight: FontWeight.w600,
-                      color: const Color(0xFF0C8172),
-                      height: 1.7,
-                    ),
-                  ),
-
-                  const SizedBox(height: 24),
-
-                  /// QUOTE
-                  Container(
-                    padding: const EdgeInsets.symmetric(
-                      vertical: 18,
-                      horizontal: 26,
-                    ),
-                    decoration: BoxDecoration(
-                      border: Border.all(color: const Color(0xFFA7D6CF)),
-                      borderRadius: BorderRadius.circular(14),
-                    ),
-                    child: AutoSizeText(
-                      'محاضر رقمية… بحجية لا تُجادل',
-                      maxLines: 1,
-                      minFontSize: 10,
-                      style: GoogleFonts.cairo(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w600,
-                        color: const Color(0xFF0C8172),
+                        ],
                       ),
-                    ),
+                      const SizedBox(width: 6),
+                      Image.asset(
+                        'assets/images/flechy.png',
+                        height: 18,
+                      ),
+                    ],
                   ),
 
-                  const Spacer(),
-
-                  /// NAV
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(30, 0, 30, 24),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: const [
-                        NavBtn(img: 'assets/images/ic2.png', label: 'عودة'),
-                        NavBtn(img: 'assets/images/ic3.png', label: 'التالي'),
-                      ],
-                    ),
+                  // MENU
+                  Image.asset(
+                    'assets/images/menu_deroul.png',
+                    width: 24,
                   ),
-
-                  /// NOTE (OBLIGATOIRE)
-                  const NoteBlock(),
                 ],
               ),
             ),
-          ),
 
-          /// ===== FOOTER =====
-          SizedBox(
-            height: _footerVisualHeight + bottomSafe,
-            width: double.infinity,
-            child: Column(
-              children: [
-                SizedBox(
-                  height: _footerVisualHeight,
-                  width: double.infinity,
-                  child: Image.asset(
-                    'assets/images/footer.png',
-                    fit: BoxFit.cover,
+            // ===== TITLE =====
+            const TitleBlock(
+              title: 'فضاء التوثيق الميداني',
+              subtitle: 'للمفوض القضائي',
+            ),
+
+            // ===== CONTENT (HEIGHT LOCKED) =====
+            const SizedBox(
+              height: 240,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  ParagraphBlock(
+                    'تم تصميم نظام التوثيق الرقمي المبتكر QRpruf خصيصًا ليتماشى مع الاحتياجات الدقيقة للمفوضين القضائيين باعتبارهم من الفاعلين الأساسيين في توثيق الوقائع ذات القيمة القانونية.',
                   ),
-                ),
-                SizedBox(height: bottomSafe),
-              ],
+                  ParagraphBlock(
+                    'ويوفر هذا النظام أدوات احترافية للتوثيق الميداني تشمل إدراج المحاضر، حفظ المعاينات، تتبع المسارات الجغرافية، وتسجيل الوقائع بالصوت أو الصورة أو الفيديو في الزمن الحقيقي.',
+                  ),
+                  ParagraphBlock(
+                    'ويعتمد QRpruf على آليات توثيق متقدمة تضمن نزاهة البيانات، مع ختم زمني ومكاني دقيق، وحماية ضد أي تعديل أو تلاعب لاحق.',
+                  ),
+                  ParagraphBlock(
+                    'كما يسمح النظام بإنشاء محاضر رقمية جاهزة للتسليم وفق المعايير القانونية، مما يمكن المفوض القضائي من إنتاج دليل رقمي قوي يصلح للإدلاء به أمام الجهات المختصة بكل ثقة.',
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
-      ),
-    );
-  }
-}
 
-/// ===== COMPONENTS =====
+            const SizedBox(height: 18),
 
-class TopIcon extends StatelessWidget {
-  final String src;
-  const TopIcon(this.src, {super.key});
-  @override
-  Widget build(BuildContext context) => Image.asset(src, width: 22);
-}
-
-class ParagraphBlock extends StatelessWidget {
-  final String text;
-  const ParagraphBlock(this.text, {super.key});
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 10),
-      child: AutoSizeText(
-        text,
-        textAlign: TextAlign.right,
-        maxLines: 2,
-        minFontSize: 10,
-        overflow: TextOverflow.ellipsis,
-        style: GoogleFonts.cairo(fontSize: 13, height: 1.9),
-      ),
-    );
-  }
-}
-
-class NavBtn extends StatelessWidget {
-  final String img;
-  final String label;
-  const NavBtn({required this.img, required this.label, super.key});
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Image.asset(img, width: 48),
-        const SizedBox(height: 6),
-        Text(label, style: GoogleFonts.cairo(fontSize: 11)),
-      ],
-    );
-  }
-}
-
-class NoteBlock extends StatelessWidget {
-  const NoteBlock({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(12, 0, 12, 18),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Expanded(
-            child: AutoSizeText(
-              'ملاحظة: لا يحتفظ QRpruf بأي بيانات تعريفية أو بيومترية ضمن النظام، وتتم جميع عمليات التوثيق والتحقق بالاعتماد على أمان جهازك، دون تخزين أو معالجة لأي معطيات شخصية خارج الإطار القانوني الآمن.',
+            // ===== CTA =====
+            const Text(
+              'ابدأ الآن في اعتماد التوثيق المهني الذكي لترقي ممارساتك، وكن من الأوائل المستفيدين من المنصة المجانية.',
               textAlign: TextAlign.right,
-              maxLines: 3,
-              minFontSize: 7,
+              maxLines: 2,
               overflow: TextOverflow.ellipsis,
-              style: GoogleFonts.cairo(fontSize: 9, height: 1.4),
+              style: TextStyle(
+                fontSize: 13,
+                fontWeight: FontWeight.w600,
+                color: Color(0xFF0C8172),
+                height: 1.7,
+              ),
             ),
-          ),
-          const SizedBox(width: 10),
-          Column(
-            children: [
-              Image.asset('assets/images/whatsy.png', width: 22),
-              const SizedBox(height: 6),
-              Image.asset('assets/images/helpy.png', width: 22),
-            ],
-          ),
-        ],
+
+            const SizedBox(height: 24),
+
+            // ===== QUOTE =====
+            const QuoteBlock(
+              'محاضر رقمية… بحجية لا تُجادل',
+            ),
+
+            const Spacer(),
+
+            // ===== NAV =====
+            NavBlock(
+              onBack: () => Navigator.pop(context),
+              onNext: () {},
+            ),
+
+            // ===== NOTE =====
+            const NoteBlock(
+              'ملاحظة: لا يحتفظ QRpruf بأي بيانات تعريفية أو بيومترية ضمن النظام، وتتم جميع عمليات التوثيق والتحقق بالاعتماد على أمان جهازك، دون تخزين أو معالجة لأي معطيات شخصية خارج الإطار القانوني الآمن.',
+            ),
+          ],
+        ),
       ),
     );
   }
