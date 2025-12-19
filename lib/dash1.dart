@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
 import 'massar1.dart';
-import 'massar2.dart'; // 👈 ajout pour le nouveau parcours
+import 'massar2.dart';
+import 'massar3_page.dart'; // 👈 AJOUT
 
 class Dash1Page extends StatelessWidget {
   const Dash1Page({super.key});
@@ -49,7 +51,7 @@ class Dash1Page extends StatelessWidget {
                           height: 24,
                         ),
 
-                        _LoginBlock(),
+                        const _LoginBlock(),
 
                         Row(
                           children: [
@@ -135,7 +137,7 @@ class Dash1Page extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            /// 🔹 BTN 1 → massar1
+                            /// BTN 1 → massar1
                             GestureDetector(
                               onTap: () {
                                 Navigator.push(
@@ -152,7 +154,7 @@ class Dash1Page extends StatelessWidget {
                               ),
                             ),
 
-                            /// 🔹 BTN 2 → massar2 (NOUVEAU)
+                            /// BTN 2 → massar2
                             GestureDetector(
                               onTap: () {
                                 Navigator.push(
@@ -182,12 +184,33 @@ class Dash1Page extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Image.asset('assets/images/btn_icon4.png',
-                                width: 95, height: 90),
-                            Image.asset('assets/images/btn_icon5.png',
-                                width: 95, height: 90),
-                            Image.asset('assets/images/btn_icon6.png',
-                                width: 95, height: 90),
+                            /// ✅ BTN 4 → Massar3Page
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (_) => const Massar3Page(),
+                                  ),
+                                );
+                              },
+                              child: Image.asset(
+                                'assets/images/btn_icon4.png',
+                                width: 95,
+                                height: 90,
+                              ),
+                            ),
+
+                            Image.asset(
+                              'assets/images/btn_icon5.png',
+                              width: 95,
+                              height: 90,
+                            ),
+                            Image.asset(
+                              'assets/images/btn_icon6.png',
+                              width: 95,
+                              height: 90,
+                            ),
                           ],
                         ),
                       ],
@@ -263,7 +286,7 @@ class _LoginBlock extends StatelessWidget {
                 'إنشاء حساب',
                 style: GoogleFonts.cairo(
                   fontSize: 10,
-                  color: Colors.grey.shade600,
+                  color: Colors.grey,
                   height: 1.05,
                 ),
               ),
