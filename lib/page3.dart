@@ -13,7 +13,7 @@ class Page3Page extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Column(
         children: [
-          /// ===== HEADER =====
+          /// ===== HEADER IMAGE =====
           SizedBox(
             height: headerHeight,
             width: double.infinity,
@@ -23,77 +23,77 @@ class Page3Page extends StatelessWidget {
             ),
           ),
 
+          /// ===== TOP BAR (CORRIGÉE) =====
+          Padding(
+            padding: const EdgeInsets.fromLTRB(12, 14, 12, 12),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                /// LEFT ICONS
+                Row(
+                  children: [
+                    Image.asset('assets/images/ico1.png', width: 22),
+                    const SizedBox(width: 8),
+                    Image.asset('assets/images/ico2.png', width: 22),
+                    const SizedBox(width: 8),
+                    Image.asset('assets/images/ico3.png', width: 22),
+                  ],
+                ),
+
+                /// LOGIN BLOCK (CENTRÉ)
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          'إنشاء حساب',
+                          style: GoogleFonts.cairo(
+                            fontSize: 10,
+                            color: Colors.grey.shade600,
+                            height: 1.1,
+                          ),
+                        ),
+                        Text(
+                          'تسجيل الدخول',
+                          style: GoogleFonts.cairo(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w700,
+                            height: 1.1,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(width: 6),
+                    Image.asset(
+                      'assets/images/flechy.png',
+                      height: 18,
+                    ),
+                  ],
+                ),
+
+                /// MENU
+                Image.asset(
+                  'assets/images/menu_deroul.png',
+                  width: 24,
+                ),
+              ],
+            ),
+          ),
+
           /// ===== BODY =====
           Expanded(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 18),
               child: Column(
                 children: [
-                  /// ===== TOP BAR =====
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(12, 18, 12, 12),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        Image.asset(
-                          'assets/images/menu_deroul.png',
-                          height: 22,
-                        ),
-
-                        /// LOGIN BLOCK
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Text(
-                                  'إنشاء حساب',
-                                  style: GoogleFonts.cairo(
-                                    fontSize: 10,
-                                    color: Colors.grey.shade600,
-                                    height: 1.1,
-                                  ),
-                                ),
-                                Text(
-                                  'تسجيل الدخول',
-                                  style: GoogleFonts.cairo(
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w700,
-                                    height: 1.1,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            const SizedBox(width: 6),
-                            Image.asset(
-                              'assets/images/flechy.png',
-                              height: 18,
-                            ),
-                          ],
-                        ),
-
-                        Row(
-                          children: [
-                            Image.asset('assets/images/ico1.png', height: 22),
-                            const SizedBox(width: 6),
-                            Image.asset('assets/images/ico2.png', height: 22),
-                            const SizedBox(width: 6),
-                            Image.asset('assets/images/ico3.png', height: 22),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-
-                  const SizedBox(height: 24),
-
-                  /// ===== TITLE =====
+                  /// TITLE
                   Container(
                     width: double.infinity,
-                    margin: const EdgeInsets.symmetric(vertical: 24),
+                    margin: const EdgeInsets.symmetric(vertical: 20),
                     padding: const EdgeInsets.symmetric(vertical: 14),
                     color: const Color(0xFFEBF4F3),
                     child: Text(
@@ -107,12 +107,11 @@ class Page3Page extends StatelessWidget {
                     ),
                   ),
 
-                  /// ===== CONTENT =====
+                  /// CONTENT
                   Expanded(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        /// TEXT BLOCK
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
@@ -139,7 +138,7 @@ class Page3Page extends StatelessWidget {
 
                         /// QUOTE
                         Container(
-                          margin: const EdgeInsets.symmetric(vertical: 24),
+                          margin: const EdgeInsets.symmetric(vertical: 22),
                           padding: const EdgeInsets.symmetric(
                             vertical: 18,
                             horizontal: 20,
@@ -188,9 +187,9 @@ class Page3Page extends StatelessWidget {
                     ),
                   ),
 
-                  /// ===== NOTE =====
+                  /// NOTE (MARGE BASSE CORRIGÉE)
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(12, 0, 12, 10),
+                    padding: const EdgeInsets.fromLTRB(12, 0, 12, 18),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
