@@ -4,7 +4,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'pages/massar3_page.dart';
 import 'pages/massar4_page.dart';
 
-
 class Dash1Page extends StatelessWidget {
   const Dash1Page({super.key});
 
@@ -50,9 +49,7 @@ class Dash1Page extends StatelessWidget {
                           width: 24,
                           height: 24,
                         ),
-
                         const _LoginBlock(),
-
                         Row(
                           children: [
                             Image.asset('assets/images/ico1.png',
@@ -137,13 +134,13 @@ class Dash1Page extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            /// BTN 1 → massar1
+                            /// BTN 1 → Massar3Page
                             GestureDetector(
                               onTap: () {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (_) => const Page3Page(),
+                                    builder: (_) => Massar3Page(),
                                   ),
                                 );
                               },
@@ -154,13 +151,13 @@ class Dash1Page extends StatelessWidget {
                               ),
                             ),
 
-                            /// BTN 2 → massar2
+                            /// BTN 2 → Massar4Page
                             GestureDetector(
                               onTap: () {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (_) => const Massar2Page(),
+                                    builder: (_) => Massar4Page(),
                                   ),
                                 );
                               },
@@ -184,13 +181,13 @@ class Dash1Page extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            /// ✅ BTN 4 → Massar3Page
+                            /// BTN 4 → Massar3Page
                             GestureDetector(
                               onTap: () {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (_) => const Massar3Page(),
+                                    builder: (_) => Massar3Page(),
                                   ),
                                 );
                               },
