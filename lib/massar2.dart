@@ -8,41 +8,47 @@ class Massar2Page extends StatelessWidget {
   static const double _headerHeight = 70;
   static const double _footerHeight = 40;
 
-  /// Hauteur de référence du design
   static const double _designHeight = 812;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: LayoutBuilder(
-        builder: (context, constraints) {
-          final scale =
-              (constraints.maxHeight / _designHeight).clamp(0.75, 1.0);
 
-          return ClipRect(
-            child: Align(
-              alignment: Alignment.topCenter,
+      body: MediaQuery.removePadding(
+        context: context,
+        removeTop: true,
+        removeBottom: true,
+        removeLeft: true,
+        removeRight: true,
+
+        child: LayoutBuilder(
+          builder: (context, constraints) {
+            final scale =
+                (constraints.maxHeight / _designHeight).clamp(0.7, 1.0);
+
+            return ClipRect(
               child: Transform.scale(
                 scale: scale,
                 alignment: Alignment.topCenter,
                 child: SizedBox(
                   width: constraints.maxWidth,
+                  height: constraints.maxHeight,
                   child: _buildContent(context),
                 ),
               ),
-            ),
-          );
-        },
+            );
+          },
+        ),
       ),
     );
   }
 
-  /// ================= CONTENT ORIGINAL =================
+  /// ================= CONTENT =================
   Widget _buildContent(BuildContext context) {
     return Column(
       children: [
-        /// ===== HEADER =====
+        /// HEADER
         SizedBox(
           height: _headerHeight,
           width: double.infinity,
@@ -52,7 +58,7 @@ class Massar2Page extends StatelessWidget {
           ),
         ),
 
-        /// ===== TOP BAR =====
+        /// TOP BAR
         Padding(
           padding: const EdgeInsets.fromLTRB(12, 14, 12, 12),
           child: Row(
@@ -101,7 +107,7 @@ class Massar2Page extends StatelessWidget {
           ),
         ),
 
-        /// ===== BODY =====
+        /// BODY
         Expanded(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 18),
@@ -249,7 +255,7 @@ class Massar2Page extends StatelessWidget {
           ),
         ),
 
-        /// ===== FOOTER =====
+        /// FOOTER
         SizedBox(
           height: _footerHeight,
           width: double.infinity,
