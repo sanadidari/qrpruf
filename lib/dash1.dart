@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'massar1.dart'; // 👈 ajout UNIQUE
+import 'massar1.dart';
+import 'massar2.dart'; // 👈 ajout pour le nouveau parcours
 
 class Dash1Page extends StatelessWidget {
   const Dash1Page({super.key});
@@ -14,6 +15,7 @@ class Dash1Page extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Column(
         children: [
+          /// ===== HEADER =====
           SizedBox(
             height: _headerHeight,
             width: double.infinity,
@@ -23,12 +25,14 @@ class Dash1Page extends StatelessWidget {
             ),
           ),
 
+          /// ===== BODY =====
           Expanded(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 6),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
+                  /// TOP BAR
                   Padding(
                     padding: const EdgeInsets.only(
                       top: 20,
@@ -65,6 +69,7 @@ class Dash1Page extends StatelessWidget {
 
                   const SizedBox(height: 24),
 
+                  /// TITLE
                   Container(
                     width: double.infinity,
                     color: const Color(0xFFEBF4F3),
@@ -117,7 +122,7 @@ class Dash1Page extends StatelessWidget {
 
                   const SizedBox(height: 18),
 
-                  /// ======== BUTTONS ========
+                  /// ===== BUTTONS =====
                   Container(
                     margin: const EdgeInsets.symmetric(horizontal: 10),
                     padding: const EdgeInsets.all(10),
@@ -130,7 +135,7 @@ class Dash1Page extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            /// 🔗 SEUL CHANGEMENT : lien vers page3
+                            /// 🔹 BTN 1 → massar1
                             GestureDetector(
                               onTap: () {
                                 Navigator.push(
@@ -146,13 +151,34 @@ class Dash1Page extends StatelessWidget {
                                 height: 90,
                               ),
                             ),
-                            Image.asset('assets/images/btn_icon2.png',
-                                width: 95, height: 90),
-                            Image.asset('assets/images/btn_icon3.png',
-                                width: 95, height: 90),
+
+                            /// 🔹 BTN 2 → massar2 (NOUVEAU)
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (_) => const Massar2Page(),
+                                  ),
+                                );
+                              },
+                              child: Image.asset(
+                                'assets/images/btn_icon2.png',
+                                width: 95,
+                                height: 90,
+                              ),
+                            ),
+
+                            Image.asset(
+                              'assets/images/btn_icon3.png',
+                              width: 95,
+                              height: 90,
+                            ),
                           ],
                         ),
+
                         const SizedBox(height: 8),
+
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -170,6 +196,7 @@ class Dash1Page extends StatelessWidget {
 
                   const Spacer(),
 
+                  /// NOTE
                   Padding(
                     padding: const EdgeInsets.fromLTRB(10, 0, 10, 10),
                     child: Row(
@@ -203,6 +230,7 @@ class Dash1Page extends StatelessWidget {
             ),
           ),
 
+          /// ===== FOOTER =====
           SizedBox(
             height: _footerHeight,
             width: double.infinity,
