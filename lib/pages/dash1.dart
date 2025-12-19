@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../layout/page_template.dart';
+import '../blocks/topbar_block.dart';
 
 import 'massar1_page.dart';
 import 'massar2_page.dart';
@@ -40,42 +41,12 @@ class Dash1Page extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            /// ===== TOP BAR =====
-            Padding(
-              padding: const EdgeInsets.only(
-                top: 20,
-                left: 10,
-                right: 10,
-                bottom: 12,
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Image.asset(
-                    'assets/images/menu_deroul.png',
-                    width: 24,
-                    height: 24,
-                  ),
-                  const _LoginBlock(),
-                  Row(
-                    children: [
-                      Image.asset('assets/images/ico1.png',
-                          width: 22, height: 22),
-                      const SizedBox(width: 6),
-                      Image.asset('assets/images/ico2.png',
-                          width: 22, height: 22),
-                      const SizedBox(width: 6),
-                      Image.asset('assets/images/ico3.png',
-                          width: 22, height: 22),
-                    ],
-                  ),
-                ],
-              ),
-            ),
+            /// 🔹 TOP BAR (BLOC COMMUN)
+            const TopBarBlock(),
 
             const SizedBox(height: 24),
 
-            /// ===== TITLE =====
+            /// TITLE
             Container(
               width: double.infinity,
               color: const Color(0xFFEBF4F3),
@@ -128,7 +99,7 @@ class Dash1Page extends StatelessWidget {
 
             const SizedBox(height: 18),
 
-            /// ===== BUTTONS =====
+            /// BUTTONS
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 10),
               padding: const EdgeInsets.all(10),
@@ -141,42 +112,18 @@ class Dash1Page extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      _navBtn(
-                        context,
-                        'assets/images/btn_icon1.png',
-                        Massar1Page(),
-                      ),
-                      _navBtn(
-                        context,
-                        'assets/images/btn_icon2.png',
-                        Massar2Page(),
-                      ),
-                      _navBtn(
-                        context,
-                        'assets/images/btn_icon3.png',
-                        Massar3Page(),
-                      ),
+                      _navBtn(context, 'assets/images/btn_icon1.png', Massar1Page()),
+                      _navBtn(context, 'assets/images/btn_icon2.png', Massar2Page()),
+                      _navBtn(context, 'assets/images/btn_icon3.png', Massar3Page()),
                     ],
                   ),
                   const SizedBox(height: 8),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      _navBtn(
-                        context,
-                        'assets/images/btn_icon4.png',
-                        Massar4Page(),
-                      ),
-                      Image.asset(
-                        'assets/images/btn_icon5.png',
-                        width: 95,
-                        height: 90,
-                      ),
-                      Image.asset(
-                        'assets/images/btn_icon6.png',
-                        width: 95,
-                        height: 90,
-                      ),
+                      _navBtn(context, 'assets/images/btn_icon4.png', Massar4Page()),
+                      Image.asset('assets/images/btn_icon5.png', width: 95, height: 90),
+                      Image.asset('assets/images/btn_icon6.png', width: 95, height: 90),
                     ],
                   ),
                 ],
@@ -185,7 +132,7 @@ class Dash1Page extends StatelessWidget {
 
             const Spacer(),
 
-            /// ===== NOTE =====
+            /// NOTE
             Padding(
               padding: const EdgeInsets.fromLTRB(10, 0, 10, 10),
               child: Row(
@@ -227,44 +174,6 @@ class Dash1Page extends StatelessWidget {
         );
       },
       child: Image.asset(asset, width: 95, height: 90),
-    );
-  }
-}
-
-class _LoginBlock extends StatelessWidget {
-  const _LoginBlock();
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 28,
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.end,
-        children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(
-                'إنشاء حساب',
-                style: GoogleFonts.cairo(
-                  fontSize: 10,
-                  color: Colors.grey,
-                ),
-              ),
-              Text(
-                'تسجيل الدخول',
-                style: GoogleFonts.cairo(
-                  fontSize: 12,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(width: 6),
-          Image.asset('assets/images/flechy.png', width: 18),
-        ],
-      ),
     );
   }
 }
