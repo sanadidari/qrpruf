@@ -3,7 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'massar1.dart';
 import 'massar2.dart';
-import 'massar3_page.dart'; // 👈 AJOUT
+import 'massar3.dart';
+import 'massar4.dart';
 
 class Dash1Page extends StatelessWidget {
   const Dash1Page({super.key});
