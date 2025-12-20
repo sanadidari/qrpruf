@@ -54346,7 +54346,7 @@ P(a){var s=null,r=t.p
 return new A.cu(B.xM,A.fZ(A.c([A.bn("assets/images/menu_deroul.png",s,24,24),B.Lt,A.fZ(A.c([A.bn("assets/images/ico1.png",s,22,22),B.u3,A.bn("assets/images/ico2.png",s,22,22),B.u3,A.bn("assets/images/ico3.png",s,22,22)],r),B.G,B.a1,s)],r),B.G,B.bF,s),s)}}
 A.Fd.prototype={
 P(a){var s=null,r=t.p
-return A.ck(A.fZ(A.c([A.d6(A.c([A.fh("\u0625\u0646\u0634\u0627\u0621 \u062d\u0633\u0627\u0628",s,s,s,s,s,s,s,A.eI().$2$color$fontSize(B.Cj,10),s,s,s),A.fh("\u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644",s,s,s,s,s,s,s,A.eI().$2$fontSize$fontWeight(12,B.aV),s,s,s)],r),B.aq,B.oB),B.Gd,A.bn("assets/images/flechy.png",s,s,18)],r),B.ch,B.a1,B.x),28,s)}}
+return A.ck(A.fZ(A.c([A.d6(A.c([A.fh("\u0625\u0646\u0634\u0627\u0621 \u062d\u0633\u0627\u0628",s,s,s,s,s,s,s,A.eI().$2$color$fontSize(B.Cj,10),s,s,s),A.fh("\u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644",s,s,s,s,s,s,s,A.eI().$2$fontSize$fontWeight(12,B.aV),s,s,s),B.Gd,A.bn("assets/images/flechy.png",s,s,18)],r),B.aq,B.oB)],r),B.ch,B.a1,B.x),28,s)}}
 A.hR.prototype={
 P(a){var s=null,r=t.w,q=A.cX(a,s,r).w
 r=A.cX(a,s,r).w
