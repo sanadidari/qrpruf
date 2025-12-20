@@ -54367,13 +54367,13 @@ n=A.a6x(B.f5)
 m=A.oP(8)
 m=A.a6L(m,A.bn("assets/images/img_accueil.png",B.V,h?140:180,1/0))
 l=A.fh("\u0645\u0631\u062d\u0628\u0627\u064b \u0628\u0643 \u0641\u064a QRpruf",j,j,j,j,j,j,j,A.jo(j,j,j,j,j,j,j,j,j,j,j,h?16:18,j,j,B.cm,j,j,!0,j,j,j,j,j,j,j,j),j,j,j)
-o=A.pg(A.d6(A.c([m,B.Gh,l,B.cW,A.fh("\u062c\u064a\u0644 \u062c\u062f\u064a\u062f \u0645\u0646 \u0627\u0644\u062a\u0648\u062b\u064a\u0642 \u0627\u0644\u0631\u0642\u0645\u064a \u064a\u0645\u0646\u062d\u0643 \u0627\u0644\u0642\u062f\u0631\u0629 \u0639\u0644\u0649 \u062a\u062d\u0648\u064a\u0644 \u0643\u0644 \u0648\u0627\u0642\u0639\u0629 \u0645\u0647\u0645\u0627 \u0635\u063a\u0631\u062a \u0625\u0644\u0649 \u062f\u0644\u064a\u0644 \u0631\u0642\u0645\u064a \u0645\u062d\u0643\u0645\u060c \u0622\u0645\u0646\u060c \u0648\u0645\u0642\u0628\u0648\u0644 \u062a\u0642\u0646\u064a\u0627\u064b \u0648\u0642\u0627\u0646\u0648\u0646\u064a\u0627\u064b.",j,j,j,j,j,j,j,A.jo(j,j,j,j,j,j,j,j,j,j,j,h?12:13,j,j,j,j,1.6,!0,j,j,j,j,j,j,j,j),j,j,j)],r),B.aq,B.H),j,new A.eM(B.f6,j,n,o,j,j,B.bu),j,j,B.xO,j)
+o=A.pg(A.d6(A.c([m,B.Gi,l,B.cW,A.fh("\u062c\u064a\u0644 \u062c\u062f\u064a\u062f \u0645\u0646 \u0627\u0644\u062a\u0648\u062b\u064a\u0642 \u0627\u0644\u0631\u0642\u0645\u064a \u064a\u0645\u0646\u062d\u0643 \u0627\u0644\u0642\u062f\u0631\u0629 \u0639\u0644\u0649 \u062a\u062d\u0648\u064a\u0644 \u0643\u0644 \u0648\u0627\u0642\u0639\u0629 \u0645\u0647\u0645\u0627 \u0635\u063a\u0631\u062a \u0625\u0644\u0649 \u062f\u0644\u064a\u0644 \u0631\u0642\u0645\u064a \u0645\u062d\u0643\u0645\u060c \u0622\u0645\u0646\u060c \u0648\u0645\u0642\u0628\u0648\u0644 \u062a\u0642\u0646\u064a\u0627\u064b \u0648\u0642\u0627\u0646\u0648\u0646\u064a\u0627\u064b.",j,j,j,j,j,j,j,A.jo(j,j,j,j,j,j,j,j,j,j,j,h?12:13,j,j,j,j,1.6,!0,j,j,j,j,j,j,j,j),j,j,j)],r),B.aq,B.H),j,new A.eM(B.f6,j,n,o,j,j,B.bu),j,j,B.xO,j)
 n=h?16:24
 m=A.fh("\u0643\u0644 \u0648\u0627\u0642\u0639\u0629\u2026\u062a\u0635\u0628\u062d \u0625\u062b\u0628\u0627\u062a\u064b\u0627",j,j,j,j,j,j,j,A.jo(j,j,B.wM,j,j,j,j,j,j,j,j,h?18:22,j,j,B.cm,j,j,!0,j,j,j,j,j,j,j,j),B.b_,j,j)
 l=A.pS(A.fh("\u064a\u0633\u062a\u0639\u0631\u0636 \u0627\u0644\u0641\u064a\u062f\u064a\u0648 \u0627\u0644\u062a\u0648\u0636\u064a\u062d\u064a \u0627\u0644\u062a\u0627\u0644\u064a \u0643\u064a\u0641 \u062a\u0639\u0645\u0644 \u0647\u0630\u0647 \u0627\u0644\u0622\u0644\u064a\u0629 \u0628\u062f\u0642\u0629",j,j,j,j,j,j,j,A.jo(j,j,j,j,j,j,j,j,j,j,j,h?11:13,j,j,j,j,j,!0,j,j,j,j,j,j,j,j),j,j,j),1)
 k=h?90:120
 l=A.fZ(A.c([l,B.hI,A.bn("assets/images/anim_video.png",B.V,h?60:80,k)],r),B.G,B.a1)
-return A.d6(A.c([A.pS(A.a6J(new A.k6(new A.am(0,g,0,1/0),new A.yQ(B.ib,B.uR,A.ck(A.d6(A.c([e,new A.cu(new A.b5(s,12,s,12),q,j),new A.cu(new A.b5(p,0,p,0),o,j),B.Gj,new A.cu(new A.b5(n,0,n,0),A.d6(A.c([m,B.hL,l,B.Gi,A.NU(j,A.bn("assets/images/cta.png",B.V,h?55:65,j),B.bC,!1,j,j,j,j,j,j,j,j,j,j,j,j,j,new A.U7(a),j,j,j)],r),B.G,B.H),j)],r),B.bB,B.H),j,f),j),j),j,j),1),A.ck(A.bn("assets/images/footer.png",B.V,j,j),42,1/0)],r),B.G,B.H)},
+return A.d6(A.c([A.pS(A.a6J(new A.k6(new A.am(0,g,0,1/0),new A.yQ(B.ib,B.uR,A.ck(A.d6(A.c([e,new A.cu(new A.b5(s,12,s,12),q,j),new A.cu(new A.b5(p,0,p,0),o,j),B.Gk,new A.cu(new A.b5(n,0,n,0),A.d6(A.c([m,B.hL,l,B.Gj,A.NU(j,A.bn("assets/images/cta.png",B.V,h?55:65,j),B.bC,!1,j,j,j,j,j,j,j,j,j,j,j,j,j,new A.U7(a),j,j,j)],r),B.G,B.H),j)],r),B.bB,B.H),j,f),j),j),j,j),1),A.ck(A.bn("assets/images/footer.png",B.V,j,j),42,1/0)],r),B.G,B.H)},
 $S:341}
 A.U7.prototype={
 $0(){var s=A.a4o(new A.U6(),null,t.z)
@@ -54384,7 +54384,7 @@ $1(a){return new A.m7(null)},
 $S:342}
 A.m7.prototype={
 P(a){var s=this,r=null,q=A.ck(A.bn("assets/images/header_sec.png",B.V,r,r),65,1/0),p=A.ck(A.bn("assets/images/footer.png",B.V,r,r),40,1/0),o=A.pg(A.fh("\u0645\u0631\u0643\u0632 \u0627\u0644\u062a\u062d\u0643\u0645 \u0627\u0644\u062a\u0648\u062b\u064a\u0642\u064a",r,r,r,r,r,r,r,A.eI().$3$color$fontSize$fontWeight(B.dq,24,B.aV),B.b_,r,r),B.j0,r,r,r,B.ji,1/0),n=A.fh("\u0645\u0633\u0627\u0631\u0627\u062a \u0627\u0644\u0627\u0633\u062a\u062e\u062f\u0627\u0645",r,r,r,r,r,r,r,A.eI().$2$fontSize$fontWeight(16,B.cl),B.b_,r,r),m=A.fh("\u0627\u062e\u062a\u0631 \u0627\u0644\u0645\u0633\u0627\u0631 \u0627\u0644\u0630\u064a \u064a\u0646\u0627\u0633\u0628 \u0648\u0636\u0639\u0643 \u0627\u0644\u0642\u0627\u0646\u0648\u0646\u064a \u0623\u0648 \u0627\u0644\u0645\u0647\u0646\u064a \u0644\u0644\u062d\u0635\u0648\u0644 \u0639\u0644\u0649 \u062a\u062c\u0631\u0628\u0629 \u062a\u0648\u062b\u064a\u0642 \u0645\u0643\u064a\u0651\u0641\u0629 \u0648\u062f\u0642\u064a\u0642\u0629 \u062f\u0627\u062e\u0644 QRpruf.",r,r,r,r,r,r,r,A.eI().$2$fontSize$height(12,1.7),B.b_,r,r),l=A.a6J(A.pg(r,B.iM,r,1,r,r,200),r,r),k=A.oP(10),j=t.p
-return new A.hR(new A.cu(B.xS,A.d6(A.c([B.bU,B.Gk,o,B.hK,n,B.hL,new A.cu(B.jj,m,r),B.ep,l,B.hK,A.pg(A.d6(A.c([A.fZ(A.c([s.lC(a,"assets/images/btn_icon1.png",B.Cd),s.lC(a,"assets/images/btn_icon2.png",B.Ce),s.lC(a,"assets/images/btn_icon3.png",B.Cf)],j),B.G,B.bF),B.hL,A.fZ(A.c([s.lC(a,"assets/images/btn_icon4.png",B.Cg),s.lC(a,"assets/images/btn_icon5.png",B.Ch),A.bn("assets/images/btn_icon6.png",r,90,95)],j),B.G,B.bF)],j),B.G,B.H),r,new A.eM(B.f6,r,r,k,r,r,B.bu),r,B.xJ,B.xL,r),B.bT,new A.cu(B.xK,A.fZ(A.c([A.d6(A.c([A.bn("assets/images/whatsy.png",r,r,22),B.cW,A.bn("assets/images/helpy.png",r,r,22)],j),B.G,B.H),B.hI,A.pS(A.fh("\u0645\u0644\u0627\u062d\u0638\u0629: \u0644\u0627 \u064a\u062d\u062a\u0641\u0638 QRpruf \u0628\u0623\u064a \u0628\u064a\u0627\u0646\u0627\u062a \u062a\u0639\u0631\u064a\u0641\u064a\u0629 \u0623\u0648 \u0628\u064a\u0648\u0645\u062a\u0631\u064a\u0629 \u0636\u0645\u0646 \u0645\u0631\u0643\u0632 \u0627\u0644\u062a\u062d\u0643\u0645\u060c \u0648\u062a\u062a\u0645 \u062c\u0645\u064a\u0639 \u0639\u0645\u0644\u064a\u0627\u062a \u0627\u0644\u062a\u0648\u062b\u064a\u0642 \u0648\u0627\u0644\u062a\u062d\u0642\u0642 \u0628\u0627\u0644\u0627\u0639\u062a\u0645\u0627\u062f \u0639\u0644\u0649 \u0623\u0645\u0627\u0646 \u062c\u0647\u0627\u0632\u0643.",r,r,r,r,r,r,r,A.eI().$2$fontSize$height(9,1.4),B.aH,r,r),1)],j),B.aq,B.a1),r)],j),B.bB,B.H),r),q,p,r)},
+return new A.hR(new A.cu(B.xS,A.d6(A.c([B.bU,B.Gl,o,B.hK,n,B.hL,new A.cu(B.jj,m,r),B.ep,l,B.hK,A.pg(A.d6(A.c([A.fZ(A.c([s.lC(a,"assets/images/btn_icon1.png",B.Cd),s.lC(a,"assets/images/btn_icon2.png",B.Ce),s.lC(a,"assets/images/btn_icon3.png",B.Cf)],j),B.G,B.bF),B.hL,A.fZ(A.c([s.lC(a,"assets/images/btn_icon4.png",B.Cg),s.lC(a,"assets/images/btn_icon5.png",B.Ch),A.bn("assets/images/btn_icon6.png",r,90,95)],j),B.G,B.bF)],j),B.G,B.H),r,new A.eM(B.f6,r,r,k,r,r,B.bu),r,B.xJ,B.xL,r),B.bT,new A.cu(B.xK,A.fZ(A.c([A.d6(A.c([A.bn("assets/images/whatsy.png",r,r,22),B.cW,A.bn("assets/images/helpy.png",r,r,22)],j),B.G,B.H),B.hI,A.pS(A.fh("\u0645\u0644\u0627\u062d\u0638\u0629: \u0644\u0627 \u064a\u062d\u062a\u0641\u0638 QRpruf \u0628\u0623\u064a \u0628\u064a\u0627\u0646\u0627\u062a \u062a\u0639\u0631\u064a\u0641\u064a\u0629 \u0623\u0648 \u0628\u064a\u0648\u0645\u062a\u0631\u064a\u0629 \u0636\u0645\u0646 \u0645\u0631\u0643\u0632 \u0627\u0644\u062a\u062d\u0643\u0645\u060c \u0648\u062a\u062a\u0645 \u062c\u0645\u064a\u0639 \u0639\u0645\u0644\u064a\u0627\u062a \u0627\u0644\u062a\u0648\u062b\u064a\u0642 \u0648\u0627\u0644\u062a\u062d\u0642\u0642 \u0628\u0627\u0644\u0627\u0639\u062a\u0645\u0627\u062f \u0639\u0644\u0649 \u0623\u0645\u0627\u0646 \u062c\u0647\u0627\u0632\u0643.",r,r,r,r,r,r,r,A.eI().$2$fontSize$height(9,1.4),B.aH,r,r),1)],j),B.aq,B.a1),r)],j),B.bB,B.H),r),q,p,r)},
 lC(a,b,c){var s=null
 return A.NU(s,A.bn(b,s,90,95),B.bC,!1,s,s,s,s,s,s,s,s,s,s,s,s,s,new A.Lu(a,c),s,s,s)}}
 A.Lu.prototype={
@@ -54436,7 +54436,7 @@ $0(){},
 $S:0}
 A.zR.prototype={
 P(a){var s=null,r=A.ck(A.bn("assets/images/header_sec.png",B.V,s,s),70,1/0),q=A.ck(A.bn("assets/images/footer.png",B.V,s,s),40,1/0)
-return new A.hR(new A.cu(B.cj,A.d6(A.c([B.bU,B.Kg,B.Ge,B.Gl,B.Eq,B.cW,B.CH,B.bT,new A.j3(new A.PM(a),new A.PN(),s)],t.p),B.G,B.H),s),r,q,s)}}
+return new A.hR(new A.cu(B.cj,A.d6(A.c([B.bU,B.Kg,B.Ge,B.Gh,B.Eq,B.cW,B.CH,B.bT,new A.j3(new A.PM(a),new A.PN(),s)],t.p),B.G,B.H),s),r,q,s)}}
 A.PM.prototype={
 $0(){A.kO(this.a).kE(null)
 return null},
@@ -58237,13 +58237,13 @@ B.Dn=new A.dd("\u0645\u062d\u0627\u0636\u0631 \u0631\u0642\u0645\u064a\u0629 \u0
 B.Aq=s([B.Di,B.Df,B.Dn],t.p)
 B.xd=new A.eO(B.aQ,B.a1,B.H,B.ar,null,B.br,null,0,B.Aq,null)
 B.Gg=new A.cc(null,240,B.xd,null)
-B.Gh=new A.cc(null,10,null,null)
-B.Gi=new A.cc(null,12,null,null)
-B.Gj=new A.cc(null,14,null,null)
+B.Gh=new A.cc(null,0,null,null)
+B.Gi=new A.cc(null,10,null,null)
+B.Gj=new A.cc(null,12,null,null)
+B.Gk=new A.cc(null,14,null,null)
 B.ep=new A.cc(null,16,null,null)
 B.hK=new A.cc(null,18,null,null)
-B.Gk=new A.cc(null,24,null,null)
-B.Gl=new A.cc(null,5,null,null)
+B.Gl=new A.cc(null,24,null,null)
 B.cW=new A.cc(null,6,null,null)
 B.hL=new A.cc(null,8,null,null)
 B.Dl=new A.dd("\u062d\u0632\u0645\u0629 \u062a\u0648\u062b\u064a\u0642 \u0645\u0648\u062c\u0647\u0629 \u0644\u0644\u0625\u062f\u0627\u0631\u0627\u062a \u0627\u0644\u0639\u0645\u0648\u0645\u064a\u0629.",null)
