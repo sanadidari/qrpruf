@@ -8,6 +8,7 @@ import 'massar1_page.dart';
 import 'massar2_page.dart';
 import 'massar3_page.dart';
 import 'massar4_page.dart';
+import 'massar5_page.dart';
 
 class Dash1Page extends StatelessWidget {
   const Dash1Page({super.key});
@@ -112,17 +113,17 @@ class Dash1Page extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      _navBtn(context, 'assets/images/btn_icon1.png', Massar1Page()),
-                      _navBtn(context, 'assets/images/btn_icon2.png', Massar2Page()),
-                      _navBtn(context, 'assets/images/btn_icon3.png', Massar3Page()),
+                      _navBtn(context, 'assets/images/btn_icon1.png', const Massar1Page()),
+                      _navBtn(context, 'assets/images/btn_icon2.png', const Massar2Page()),
+                      _navBtn(context, 'assets/images/btn_icon3.png', const Massar3Page()),
                     ],
                   ),
                   const SizedBox(height: 8),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      _navBtn(context, 'assets/images/btn_icon4.png', Massar4Page()),
-                      Image.asset('assets/images/btn_icon5.png', width: 95, height: 90),
+                      _navBtn(context, 'assets/images/btn_icon4.png', const Massar4Page()),
+                      _navBtn(context, 'assets/images/btn_icon5.png', const Massar5Page()),
                       Image.asset('assets/images/btn_icon6.png', width: 95, height: 90),
                     ],
                   ),
