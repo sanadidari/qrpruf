@@ -75323,7 +75323,7 @@ A.he.prototype={
 G(){return"WassitType."+this.b}}
 A.KJ.prototype={
 K(a){var s=this
-return A.Wl(new A.bR(B.bN,A.fw(A.c([s.pY(B.T1,"assets/images/wassit5.png","\u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u0645\u0633\u0627\u0631"),s.pY(B.T0,"assets/images/wassit4.png","\u0628\u064a\u0627\u0646 \u0645\u0643\u062a\u0648\u0628"),s.pY(B.T_,"assets/images/wassit3.png","\u0634\u0631\u064a\u0637 \u0641\u064a\u062f\u064a\u0648"),s.pY(B.SZ,"assets/images/wassit2.png","\u0644\u0642\u0637\u0629 \u0635\u0648\u0631\u0629"),s.pY(B.yt,"assets/images/wassit1.png","\u0645\u0642\u0637\u0639 \u0635\u0648\u062a\u064a")],t.p),B.y,B.al),null),B.aB)},
+return A.Wl(new A.bR(B.bN,A.fw(A.c([s.pY(B.yt,"assets/images/wassit1.png","\u0645\u0642\u0637\u0639 \u0635\u0648\u062a\u064a"),s.pY(B.SZ,"assets/images/wassit2.png","\u0644\u0642\u0637\u0629 \u0635\u0648\u0631\u0629"),s.pY(B.T_,"assets/images/wassit3.png","\u0634\u0631\u064a\u0637 \u0641\u064a\u062f\u064a\u0648"),s.pY(B.T0,"assets/images/wassit4.png","\u0628\u064a\u0627\u0646 \u0645\u0643\u062a\u0648\u0628"),s.pY(B.T1,"assets/images/wassit5.png","\u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u0645\u0633\u0627\u0631")],t.p),B.y,B.al),null),B.aB)},
 pY(a,b,c){var s=null,r=this.d.p(0,a),q=this.c===a?B.Bt:B.k,p=r?B.c8:B.fh
 p=A.id(p,r?2:1)
 return A.jI(s,new A.bR(B.CQ,A.bt(A.c([A.d0(A.mT(A.bJ(b,s,26,26),s,s),B.q,s,new A.cb(q,s,p,s,s,s,B.i9),56,s,s,56),B.eM,A.br(c,s,s,s,s,s,s,s,A.bN().$2$color$fontSize(B.AQ,11),B.b8,s,s)],t.p),B.y,B.cM),s),B.ak,!1,s,s,s,s,s,s,s,s,s,s,s,s,s,new A.aab(this,a),s,s,s)}}
