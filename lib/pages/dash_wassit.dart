@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import '../layout/page_template_wassit.dart';
-import '../blocks/topbar_block.dart';
 import '../blocks/wassit_selector_block.dart';
 
 // WASSIT BLOCKS
@@ -25,9 +23,9 @@ class _DashWassitPageState extends State<DashWassitPage> {
   WassitType _activeType = WassitType.audio;
   final Set<WassitType> _validatedTypes = {};
 
-  void _validateCurrent() {
+  void _onValidate(WassitType type) {
     setState(() {
-      _validatedTypes.add(_activeType);
+      _validatedTypes.add(type);
     });
   }
 
@@ -42,96 +40,70 @@ class _DashWassitPageState extends State<DashWassitPage> {
                 context,
                 MaterialPageRoute(
                   builder: (_) => WassitSummaryPage(
-                     validatedTypes: _validatedTypes,
+                    validatedTypes: _validatedTypes,
                   ),
                 ),
               );
             },
 
-      /// HEADER IMAGE
       header: Image.asset(
         'assets/images/header_sec.png',
         fit: BoxFit.cover,
       ),
-
-      /// FOOTER IMAGE
       footer: Image.asset(
         'assets/images/footer.png',
         fit: BoxFit.cover,
       ),
 
-      /// BODY
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 18),
-        child: Column(
-          children: [
-            /// TOP BAR
-            const TopBarBlock(),
+      body: Column(
+        children: [
+          /// ZONE 1 — SELECTEUR
+          WassitSelectorBlock(
+            activeType: _activeType,
+            validatedTypes: _validatedTypes,
+            onSelect: (type) {
+              setState(() {
+                _activeType = type;
+              });
+            },
+          ),
 
-            /// TITRE WASSIT (OBLIGATOIRE)
-            ///Container(
-            ///  width: double.infinity,
-            ///  margin: const EdgeInsets.symmetric(vertical: 18),
-            ///  padding: const EdgeInsets.symmetric(vertical: 14),
-            ///  color: const Color(0xFFEBF4F3),
-            ///  child: Text(
-            ///    'مرحلة جمع وسائل الإثبات',
-            ///    textAlign: TextAlign.center,
-            ///    style: GoogleFonts.cairo(
-            ///      fontSize: 22,
-            ///      fontWeight: FontWeight.w700,
-            ///      color: const Color(0xFF0C8172),
-            ///    ),
-            ///  ),
-            ///),
+          const SizedBox(height: 24),
 
-            /// SELECTEUR WASSIT
-            WassitSelectorBlock(
-              activeType: _activeType,
-              validatedTypes: _validatedTypes,
-              onSelect: (type) {
-                setState(() {
-                  _activeType = type;
-                });
-              },
-            ),
+          /// ZONE 2 — MOYEN ACTIF
+          SizedBox(
+            height: 320,
+            child: _buildActiveWassit(),
+          ),
 
-            const SizedBox(height: 24),
-
-            /// ZONE CENTRALE
-            SizedBox(
-              height: 320,
-              child: _buildActiveWassit(),
-            ),
-
-            const SizedBox(height: 12),
-
-            /// 🧪 BOUTON TEST (À SUPPRIMER PLUS TARD)
-            SizedBox(
-              width: double.infinity,
-              child: OutlinedButton(
-                onPressed: _validateCurrent,
-                child: const Text('🧪 TEST : Valider ce moyen'),
-              ),
-            ),
-          ],
-        ),
+          const Spacer(),
+        ],
       ),
     );
   }
 
   Widget _buildActiveWassit() {
     switch (_activeType) {
-      case WassitType.track:
-        return WassitTrajetBlock(onValidate: _validateCurrent);
-      case WassitType.text:
-        return WassitTextBlock(onValidate: _validateCurrent);
-      case WassitType.video:
-        return WassitVideoBlock(onValidate: _validateCurrent);
-      case WassitType.image:
-        return WassitImageBlock(onValidate: _validateCurrent);
       case WassitType.audio:
-        return WassitAudioBlock(onValidate: _validateCurrent);
+        return WassitAudioBlock(
+          onValidate: () => _onValidate(WassitType.audio),
+        );
+      case WassitType.image:
+        return WassitImageBlock(
+          onValidate: () => _onValidate(WassitType.image),
+        );
+      case WassitType.video:
+        return WassitVideoBlock(
+          onValidate: () => _onValidate(WassitType.video),
+        );
+      case WassitType.text:
+        return WassitTextBlock(
+          onValidate: () => _onValidate(WassitType.text),
+        );
+      case WassitType.track:
+        return WassitTrajetBlock(
+          onValidate: () => _onValidate(WassitType.track),
+        );
     }
   }
 }
