@@ -39246,7 +39246,7 @@ L(a){var s=null,r=A.bK(a,B.bF,t.w).w.r.b+8,q=this.c.U(0,new A.h(8,r)),p=A.bu(thi
 $.V()
 o=A.at7(new A.vy(s,s,o,B.AM))
 o.toString
-return new A.bQ(new A.as(8,r,8,8),new A.l2(new A.FD(q),A.df(A.awJ(A.Fq(new A.bQ(B.D1,p,s),new A.hU(B.C_.c7(a),s,s,s,A.y_(B.lb,new A.aO(B.C3.c7(a),1,B.p,-1))),B.d8),new A.zY(new A.uI(o),new A.zX(20,20,s))),B.al,s,B.LT,s,s,s,222),s),s)}}
+return new A.bQ(new A.as(8,r,8,8),new A.l2(new A.FD(q),A.df(A.awJ(A.Fq(new A.bQ(B.mn,p,s),new A.hU(B.C_.c7(a),s,s,s,A.y_(B.lb,new A.aO(B.C3.c7(a),1,B.p,-1))),B.d8),new A.zY(new A.uI(o),new A.zX(20,20,s))),B.al,s,B.LT,s,s,s,222),s),s)}}
 A.n3.prototype={
 ao(){return new A.A8()}}
 A.A8.prototype={
@@ -75833,7 +75833,7 @@ L(a){var s,r=this,q=null,p=r.c,o=r.r.p(0,p)
 p=r.f===p?B.By:B.k
 s=o?B.cx:B.fg
 s=A.ih(s,o?2:1)
-return A.jL(q,new A.bQ(B.D_,A.bc(A.bu(A.c([A.df(A.mV(A.bJ(r.d,B.zn,52,52),q,q),B.r,q,new A.cb(p,q,s,q,q,q,B.i9),56,q,q,56),B.MX,A.bt(r.e,q,q,1,B.bq,q,q,q,A.bT().$3$color$fontSize$height(B.AV,9.8,1),B.bp,q,q)],t.p),B.D,B.cM),q,58),q),B.af,!1,q,q,q,q,q,q,q,q,q,q,q,q,q,new A.ain(r),q,q,q)}}
+return A.jL(q,new A.bQ(B.D_,A.bc(A.bu(A.c([A.df(A.mV(A.bJ(r.d,B.zn,56,56),q,q),B.r,q,new A.cb(p,q,s,q,q,q,B.i9),56,q,q,56),B.MX,A.bt(r.e,q,q,1,B.bq,q,q,q,A.bT().$3$color$fontSize$height(B.AV,9.8,1),B.bp,q,q)],t.p),B.D,B.cM),q,58),q),B.af,!1,q,q,q,q,q,q,q,q,q,q,q,q,q,new A.ain(r),q,q,q)}}
 A.ain.prototype={
 $0(){var s=this.a
 return s.w.$1(s.c)},
@@ -75942,7 +75942,7 @@ $1(a){return B.C7},
 $S:480}
 A.q0.prototype={
 L(a){var s=this,r=null,q=A.bc(A.bJ("assets/images/header_sec.png",B.Y,r,r),65,1/0),p=A.bc(A.bJ("assets/images/footer.png",B.Y,r,r),40,1/0),o=A.df(A.bt("\u0645\u0631\u0643\u0632 \u0627\u0644\u062a\u062d\u0643\u0645 \u0627\u0644\u062a\u0648\u062b\u064a\u0642\u064a",r,r,r,r,r,r,r,A.bT().$3$color$fontSize$fontWeight(B.cx,24,B.a8),B.bp,r,r),B.r,B.lZ,r,r,r,B.CM,1/0),n=A.bt("\u0645\u0633\u0627\u0631\u0627\u062a \u0627\u0644\u0627\u0633\u062a\u062e\u062f\u0627\u0645",r,r,r,r,r,r,r,A.bT().$2$fontSize$fontWeight(16,B.ec),B.bp,r,r),m=A.bt("\u0627\u062e\u062a\u0631 \u0627\u0644\u0645\u0633\u0627\u0631 \u0627\u0644\u0630\u064a \u064a\u0646\u0627\u0633\u0628 \u0648\u0636\u0639\u0643 \u0627\u0644\u0642\u0627\u0646\u0648\u0646\u064a \u0623\u0648 \u0627\u0644\u0645\u0647\u0646\u064a \u0644\u0644\u062d\u0635\u0648\u0644 \u0639\u0644\u0649 \u062a\u062c\u0631\u0628\u0629 \u062a\u0648\u062b\u064a\u0642 \u0645\u0643\u064a\u0651\u0641\u0629 \u0648\u062f\u0642\u064a\u0642\u0629 \u062f\u0627\u062e\u0644 QRpruf.",r,r,r,r,r,r,r,A.bT().$2$fontSize$height(12,1.7),B.bp,r,r),l=A.mV(A.df(r,B.r,B.lF,r,1,r,r,200),r,r),k=A.cY(10),j=t.p
-return new A.iL(new A.bQ(B.mn,A.bu(A.c([new A.hZ(r),B.kp,o,B.hB,n,B.bE,new A.bQ(B.ml,m,r),B.ch,l,B.hB,A.df(A.bu(A.c([A.fy(A.c([s.nT(a,"assets/images/btn_icon1.png",B.HX),s.nT(a,"assets/images/btn_icon2.png",B.HY),s.nT(a,"assets/images/btn_icon3.png",B.HZ)],j),B.D,B.cL),B.bE,A.fy(A.c([s.nT(a,"assets/images/btn_icon4.png",B.I_),s.nT(a,"assets/images/btn_icon5.png",B.I0),s.nT(a,"assets/images/btn_icon6.png",B.I1)],j),B.D,B.cL)],j),B.D,B.v),B.r,r,new A.cb(B.ip,r,r,k,r,r,B.Z),r,B.CO,B.CP,r)],j),B.d7,B.v),r),q,p,r,r,r)},
+return new A.iL(new A.bQ(B.D1,A.bu(A.c([new A.hZ(r),B.kp,o,B.hB,n,B.bE,new A.bQ(B.ml,m,r),B.ch,l,B.hB,A.df(A.bu(A.c([A.fy(A.c([s.nT(a,"assets/images/btn_icon1.png",B.HX),s.nT(a,"assets/images/btn_icon2.png",B.HY),s.nT(a,"assets/images/btn_icon3.png",B.HZ)],j),B.D,B.cL),B.bE,A.fy(A.c([s.nT(a,"assets/images/btn_icon4.png",B.I_),s.nT(a,"assets/images/btn_icon5.png",B.I0),s.nT(a,"assets/images/btn_icon6.png",B.I1)],j),B.D,B.cL)],j),B.D,B.v),B.r,r,new A.cb(B.ip,r,r,k,r,r,B.Z),r,B.CO,B.CP,r)],j),B.d7,B.v),r),q,p,r,r,r)},
 nT(a,b,c){var s=null
 return A.jL(s,A.bJ(b,s,90,95),B.af,!1,s,s,s,s,s,s,s,s,s,s,s,s,s,new A.W3(a,c),s,s,s)}}
 A.W3.prototype={
@@ -79239,8 +79239,8 @@ B.mm=new A.as(30,0,30,24)
 B.D_=new A.as(3,0,0,0)
 B.D0=new A.as(4,0,4,0)
 B.UB=new A.as(4,4,4,5)
-B.mn=new A.as(6,0,6,0)
-B.D1=new A.as(6,6,6,6)
+B.D1=new A.as(6,0,6,0)
+B.mn=new A.as(6,6,6,6)
 B.D2=new A.as(8,0,8,0)
 B.D3=new A.as(8,2,8,5)
 B.D4=new A.as(8,4,8,4)
