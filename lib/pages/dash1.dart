@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import '../layout/page_template.dart';
 import '../blocks/topbar_block.dart';
@@ -17,57 +16,39 @@ class Dash1Page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PageTemplate(
-      // ===== HEADER =====
-      header: SizedBox(
-        height: 65,
-        width: double.infinity,
-        child: Image.asset(
-          'assets/images/header_sec.png',
-          fit: BoxFit.cover,
-        ),
-      ),
+      // ===== HEADER SYSTÈME =====
+      header: const TopBarBlock(),
 
       // ===== FOOTER =====
-      footer: SizedBox(
-        height: 40,
-        width: double.infinity,
-        child: Image.asset(
-          'assets/images/footer.png',
-          fit: BoxFit.cover,
-        ),
-      ),
+      footer: const SizedBox.shrink(),
 
       // ===== BODY =====
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 6),
+      body: SizedBox(
+        height: 520, // 🔒 hauteur verrouillée (système)
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            TopBarBlock(),
-
-            const SizedBox(height: 24),
-
+            /// TITRE
             Container(
               width: double.infinity,
               color: const Color(0xFFEBF4F3),
               padding: const EdgeInsets.symmetric(vertical: 14),
-              child: Text(
+              child: const Text(
                 'مركز التحكم التوثيقي',
                 textAlign: TextAlign.center,
-                style: GoogleFonts.cairo(
+                style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
-                  color: const Color(0xFF0C8172),
+                  color: Color(0xFF0C8172),
                 ),
               ),
             ),
 
             const SizedBox(height: 18),
 
-            Text(
+            const Text(
               'مسارات الاستخدام',
               textAlign: TextAlign.center,
-              style: GoogleFonts.cairo(
+              style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w600,
               ),
@@ -75,12 +56,12 @@ class Dash1Page extends StatelessWidget {
 
             const SizedBox(height: 8),
 
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16),
               child: Text(
                 'اختر المسار الذي يناسب وضعك القانوني أو المهني للحصول على تجربة توثيق مكيّفة ودقيقة داخل QRpruf.',
                 textAlign: TextAlign.center,
-                style: GoogleFonts.cairo(
+                style: TextStyle(
                   fontSize: 12,
                   height: 1.7,
                 ),
@@ -89,45 +70,41 @@ class Dash1Page extends StatelessWidget {
 
             const SizedBox(height: 16),
 
-            Center(
-              child: Container(
-                width: 200,
-                height: 1,
-                color: Colors.grey.shade400,
-              ),
+            Container(
+              width: 200,
+              height: 1,
+              color: Colors.grey,
             ),
 
             const SizedBox(height: 18),
 
-            Container(
-              margin: const EdgeInsets.symmetric(horizontal: 10),
-              padding: const EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                color: const Color(0xFFF5F5F5),
-                borderRadius: BorderRadius.circular(10),
-              ),
+            /// BOUTONS MASSAR
+            SizedBox(
+              height: 230,
               child: Column(
                 children: [
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      _navBtn(context, 'assets/images/btn_icon1.png', const Massar1Page()),
-                      _navBtn(context, 'assets/images/btn_icon2.png', const Massar2Page()),
-                      _navBtn(context, 'assets/images/btn_icon3.png', const Massar3Page()),
+                      _navBtn(context, 'assets/images/btn_icon1.png', Massar1Page()),
+                      _navBtn(context, 'assets/images/btn_icon2.png', Massar2Page()),
+                      _navBtn(context, 'assets/images/btn_icon3.png', Massar3Page()),
                     ],
                   ),
                   const SizedBox(height: 8),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      _navBtn(context, 'assets/images/btn_icon4.png', const Massar4Page()),
-                      _navBtn(context, 'assets/images/btn_icon5.png', const Massar5Page()),
-                      _navBtn(context, 'assets/images/btn_icon6.png', const Massar6Page()), // ✅ AJOUT
+                      _navBtn(context, 'assets/images/btn_icon4.png', Massar4Page()),
+                      _navBtn(context, 'assets/images/btn_icon5.png', Massar5Page()),
+                      _navBtn(context, 'assets/images/btn_icon6.png', Massar6Page()),
                     ],
                   ),
                 ],
               ),
             ),
+
+            const Spacer(),
           ],
         ),
       ),
