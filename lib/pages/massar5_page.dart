@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../layout/page_template.dart';
+import '../blocks/topbar_block.dart';
 import '../blocks/title_block.dart';
 import '../blocks/paragraph_block.dart';
 import '../blocks/quote_block.dart';
@@ -12,13 +13,12 @@ class Massar5Page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PageTemplate(
-      /// 🔒 NAVIGATION MASSAR
+      /// 🔒 NAVIGATION MASSAR (OBLIGATOIRE)
       onBack: () => Navigator.pop(context),
       onNext: () => goToWassit(context),
 
-      /// 🔒 HEADER — IMAGE SYSTÈME
       header: SizedBox(
-        height: 65,
+        height: 70,
         width: double.infinity,
         child: Image.asset(
           'assets/images/header_sec.png',
@@ -26,7 +26,6 @@ class Massar5Page extends StatelessWidget {
         ),
       ),
 
-      /// 🔒 FOOTER — IMAGE SYSTÈME
       footer: SizedBox(
         height: 40,
         width: double.infinity,
@@ -36,36 +35,39 @@ class Massar5Page extends StatelessWidget {
         ),
       ),
 
-      /// 🔹 CONTENU MASSAR
-      body: Column(
-        children: [
-          const TitleBlock(
-            title: 'فضاء التوثيق الذكي للبحث العلمي',
-            subtitle: '',
-          ),
+      /// 🔹 CONTENU UNIQUEMENT
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 18),
+        child: Column(
+          children: [
+            TopBarBlock(),
 
-          /// TEXTE — HAUTEUR VERROUILLÉE
-          const SizedBox(
-            height: 150,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                ParagraphBlock(
-                  'يوفّر QRpruf حلولاً متقدّمة للهيئات المهنية، النقابات، الجمعيات، والتعاونيات من أجل توثيق أنشطتها ومحاضر اجتماعاتها وعملياتها الميدانية والمراسلات الرسمية بكل شفافية وحياد.',
-                ),
-                ParagraphBlock(
-                  'وتوجد الحزمة المؤسسية المُخصّصة لهذا القطاع في مرحلة التطوير النهائي، وستُمكّن قريباً من حفظ القرارات، إثبات الحضور، توثيق المبادرات، وضبط السجلات التنظيمية بدليل رقمي محكم يعزّز المساءلة ويمنح حماية قانونية أقوى.',
-                ),
-                ParagraphBlock(
-                  'وإلى حين إطلاق هذه النسخة، يمكن للهيئات اعتماد مسار "الاستعمال الشخصي" لإتمام عمليات التوثيق الرقمية بكفاءة وموثوقية عالية.',
-                ),
-              ],
+            const TitleBlock(
+              title: 'فضاء التوثيق الذكي للبحث العلمي',
+              subtitle: '',
             ),
-          ),
 
-          const Spacer(),
-          const QuoteBlock('توثيق مؤسسي يعزّز الشفافيةوالمساءلة'),
-        ],
+            const SizedBox(
+              height: 150,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  ParagraphBlock(
+                    'يوفّر QRpruf حلولاً متقدّمة للهيئات المهنية، النقابات، الجمعيات، والتعاونيات من أجل توثيق أنشطتها ومحاضر اجتماعاتها وعملياتها الميدانية والمراسلات الرسمية بكل شفافية وحياد. وتوجد الحزمة المؤسسية المُخصّصة لهذا القطاع في مرحلة التطوير النهائي، وستُمكّن قريباً من حفظ القرارات، إثبات الحضور، توثيق المبادرات، وضبط السجلات التنظيمية بدليل رقمي محكم يعزّز المساءلة ويمنح حماية قانونية أقوى.'
+                  ),
+                  ParagraphBlock(
+                    'وإلى حين إطلاق هذه النسخة، يمكن للهيئات اعتماد مسار "الاستعمال الشخصي" لإتمام عمليات التوثيق الرقمية بكفاءة وموثوقية عالية.'
+                  ),
+                  ParagraphBlock(
+                    'ارتقِ بالشفافية داخل هيئتكم — سجّل الآن للاستفادة من النسخة التجريبية المجانية للتوثيق المؤسسي.'
+                  ),
+                ],
+              ),
+            ),
+
+            const QuoteBlock('توثيق مؤسسي يعزّز الشفافيةوالمساءلة'),
+          ],
+        ),
       ),
     );
   }
