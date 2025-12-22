@@ -7,39 +7,59 @@ class WassitAudioUploadBlock extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: double.infinity,
       padding: const EdgeInsets.all(14),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: Colors.grey.withOpacity(0.3)),
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(
+          color: Colors.grey.withOpacity(0.3),
+        ),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          /// 🔹 TITRE UPLOAD
           Text(
             'رفع ملف صوتي',
             style: GoogleFonts.cairo(
-              fontSize: 14,
-              fontWeight: FontWeight.bold,
+              fontSize: 13,
+              fontWeight: FontWeight.w600,
+              color: const Color(0xFF0C8172),
             ),
           ),
-          const SizedBox(height: 8),
+
+          const SizedBox(height: 6),
+
+          /// 🔹 DESCRIPTION
           Text(
-            'اختر ملفًا صوتيًا من جهازك (MP3 / WAV).',
+            'يمكنك اختيار ملف صوتي محفوظ مسبقًا على جهازك.',
             style: GoogleFonts.cairo(
               fontSize: 12,
-              color: Colors.black54,
+              height: 1.5,
+              color: const Color(0xFF444444),
             ),
           ),
-          const SizedBox(height: 12),
-          SizedBox(
-            width: double.infinity,
-            child: OutlinedButton(
-              onPressed: () {
-                // 🔒 logique upload audio (plus tard)
-              },
-              child: const Text('اختيار ملف'),
-            ),
+
+          const SizedBox(height: 10),
+
+          /// 🔹 INDICATEUR STATIQUE
+          Row(
+            children: [
+              const Icon(
+                Icons.upload_file,
+                size: 18,
+                color: Colors.grey,
+              ),
+              const SizedBox(width: 6),
+              Text(
+                'اختيار ملف صوتي (غير مفعل بعد)',
+                style: GoogleFonts.cairo(
+                  fontSize: 11,
+                  color: Colors.grey,
+                ),
+              ),
+            ],
           ),
         ],
       ),
