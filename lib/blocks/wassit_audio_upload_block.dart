@@ -1,8 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class WassitAudioUploadBlock extends StatelessWidget {
+class WassitAudioUploadBlock extends StatefulWidget {
   const WassitAudioUploadBlock({super.key});
+
+  @override
+  State<WassitAudioUploadBlock> createState() => _WassitAudioUploadBlockState();
+}
+
+class _WassitAudioUploadBlockState extends State<WassitAudioUploadBlock> {
+  bool _hasSelectedFile = false;
+
+  void _simulatePickFile() {
+    setState(() {
+      _hasSelectedFile = true;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -13,13 +26,15 @@ class WassitAudioUploadBlock extends StatelessWidget {
         color: Colors.white,
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
-          color: Colors.grey.withOpacity(0.3),
+          color: _hasSelectedFile
+              ? const Color(0xFF0C8172)
+              : Colors.grey.withOpacity(0.3),
         ),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          /// 🔹 TITRE UPLOAD
+          /// 🔹 TITRE
           Text(
             'رفع ملف صوتي',
             style: GoogleFonts.cairo(
@@ -33,7 +48,9 @@ class WassitAudioUploadBlock extends StatelessWidget {
 
           /// 🔹 DESCRIPTION
           Text(
-            'يمكنك اختيار ملف صوتي محفوظ مسبقًا على جهازك.',
+            _hasSelectedFile
+                ? 'تم اختيار ملف صوتي.'
+                : 'اختر ملفًا صوتيًا محفوظًا على جهازك.',
             style: GoogleFonts.cairo(
               fontSize: 12,
               height: 1.5,
@@ -41,25 +58,27 @@ class WassitAudioUploadBlock extends StatelessWidget {
             ),
           ),
 
-          const SizedBox(height: 10),
+          const SizedBox(height: 12),
 
-          /// 🔹 INDICATEUR STATIQUE
-          Row(
-            children: [
-              const Icon(
-                Icons.upload_file,
-                size: 18,
-                color: Colors.grey,
+          /// 🔹 ACTION
+          SizedBox(
+            width: double.infinity,
+            child: OutlinedButton.icon(
+              onPressed: _simulatePickFile,
+              icon: Icon(
+                _hasSelectedFile ? Icons.check_circle : Icons.upload_file,
+                color: _hasSelectedFile
+                    ? const Color(0xFF0C8172)
+                    : Colors.grey,
               ),
-              const SizedBox(width: 6),
-              Text(
-                'اختيار ملف صوتي (غير مفعل بعد)',
+              label: Text(
+                _hasSelectedFile ? 'تم اختيار الملف' : 'اختيار ملف صوتي',
                 style: GoogleFonts.cairo(
-                  fontSize: 11,
-                  color: Colors.grey,
+                  fontSize: 12,
+                  fontWeight: FontWeight.w600,
                 ),
               ),
-            ],
+            ),
           ),
         ],
       ),
