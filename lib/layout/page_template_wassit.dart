@@ -62,7 +62,7 @@ class PageTemplateWassit extends StatelessWidget {
                       ),
 
                     /// NOTE LÉGALE WASSIT
-                    const WassitNoteBlock(),
+                    WassitNoteBlock(),
 
                     /// FOOTER — HAUTEUR VERROUILLÉE
                     SizedBox(
