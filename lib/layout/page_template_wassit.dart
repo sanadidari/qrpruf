@@ -4,7 +4,6 @@ import '../blocks/wassit_note_block.dart';
 
 class PageTemplateWassit extends StatelessWidget {
   final Widget body;
-
   final Widget header;
   final Widget footer;
 
@@ -22,19 +21,21 @@ class PageTemplateWassit extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final topSafe = MediaQuery.of(context).viewPadding.top;
-    final bottomSafe = MediaQuery.of(context).viewPadding.bottom;
+    final double topSafe = MediaQuery.of(context).viewPadding.top;
+    final double bottomSafe = MediaQuery.of(context).viewPadding.bottom;
 
     final bool showNav = onBack != null || onNext != null;
 
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Column(
+    return Container(
+      color: Colors.white,
+      width: double.infinity,
+      height: double.infinity,
+      child: Column(
         children: [
-          /// SAFE TOP
+          /// SAFE TOP (système)
           SizedBox(height: topSafe),
 
-          /// HEADER — HAUTEUR CANONIQUE (65)
+          /// HEADER — HAUTEUR CANONIQUE
           SizedBox(
             height: 65,
             width: double.infinity,
@@ -46,7 +47,9 @@ class PageTemplateWassit extends StatelessWidget {
             child: Column(
               children: [
                 /// BODY
-                Expanded(child: body),
+                Expanded(
+                  child: body,
+                ),
 
                 /// ZONE BASSE WASSIT
                 Column(
@@ -58,10 +61,10 @@ class PageTemplateWassit extends StatelessWidget {
                         onNext: onNext,
                       ),
 
-                    /// NOTE LÉGALE UNIQUE
-                    const NoteBlock(),
+                    /// NOTE LÉGALE WASSIT
+                    const WassitNoteBlock(),
 
-                    /// FOOTER
+                    /// FOOTER — HAUTEUR VERROUILLÉE
                     SizedBox(
                       height: 40,
                       width: double.infinity,
@@ -73,7 +76,7 @@ class PageTemplateWassit extends StatelessWidget {
             ),
           ),
 
-          /// SAFE BOTTOM
+          /// SAFE BOTTOM (système)
           SizedBox(height: bottomSafe),
         ],
       ),
@@ -83,13 +86,16 @@ class PageTemplateWassit extends StatelessWidget {
 
 ///
 /// 🔒 NAVIGATION WASSIT DÉDIÉE
-/// (séparée de NavBlock Massar volontairement)
+/// (séparée volontairement de Massar)
 ///
 class _WassitNav extends StatelessWidget {
   final VoidCallback? onBack;
   final VoidCallback? onNext;
 
-  const _WassitNav({this.onBack, this.onNext});
+  const _WassitNav({
+    this.onBack,
+    this.onNext,
+  });
 
   @override
   Widget build(BuildContext context) {

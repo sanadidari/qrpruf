@@ -22,31 +22,37 @@ class PageTemplate extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final topSafe = MediaQuery.of(context).viewPadding.top;
-    final bottomSafe = MediaQuery.of(context).viewPadding.bottom;
+    final double topSafe = MediaQuery.of(context).viewPadding.top;
+    final double bottomSafe = MediaQuery.of(context).viewPadding.bottom;
 
     final bool showNav = onBack != null || onNext != null;
 
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Column(
+    return Container(
+      color: Colors.white,
+      width: double.infinity,
+      height: double.infinity,
+      child: Column(
         children: [
+          /// SAFE TOP (système)
           SizedBox(height: topSafe),
 
-          /// 🔹 HEADER — HAUTEUR CANONIQUE SYSTÈME (65)
+          /// HEADER — HAUTEUR CANONIQUE
           SizedBox(
             height: 65,
             width: double.infinity,
             child: header,
           ),
 
-          /// 🔹 CONTENU
+          /// CONTENU PRINCIPAL
           Expanded(
             child: Column(
               children: [
-                Expanded(child: body),
+                /// BODY
+                Expanded(
+                  child: body,
+                ),
 
-                /// 🔒 ZONE BASSE
+                /// ZONE BASSE MASSAR
                 Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
@@ -55,7 +61,11 @@ class PageTemplate extends StatelessWidget {
                         onBack: onBack,
                         onNext: onNext,
                       ),
+
+                    /// NOTE LÉGALE MASSAR
                     const NoteBlock(),
+
+                    /// FOOTER
                     footer,
                   ],
                 ),
@@ -63,6 +73,7 @@ class PageTemplate extends StatelessWidget {
             ),
           ),
 
+          /// SAFE BOTTOM (système)
           SizedBox(height: bottomSafe),
         ],
       ),
