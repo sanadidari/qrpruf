@@ -5,8 +5,7 @@ import '../blocks/topbar_block.dart';
 import '../blocks/title_block.dart';
 import '../blocks/paragraph_block.dart';
 import '../blocks/quote_block.dart';
-import '../blocks/note_block.dart';
-import '../blocks/nav_block.dart';
+import '../navigation/massar_navigation.dart';
 
 class Massar3Page extends StatelessWidget {
   const Massar3Page({super.key});
@@ -14,6 +13,10 @@ class Massar3Page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PageTemplate(
+      /// 🔒 NAVIGATION MASSAR (OBLIGATOIRE)
+      onBack: () => Navigator.pop(context),
+      onNext: () => goToWassit(context),
+
       header: SizedBox(
         height: 70,
         width: double.infinity,
@@ -22,6 +25,7 @@ class Massar3Page extends StatelessWidget {
           fit: BoxFit.cover,
         ),
       ),
+
       footer: SizedBox(
         height: 40,
         width: double.infinity,
@@ -30,12 +34,13 @@ class Massar3Page extends StatelessWidget {
           fit: BoxFit.cover,
         ),
       ),
+
+      /// 🔹 CONTENU UNIQUEMENT
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 18),
         child: Column(
           children: [
-            /// ✅ TOP BAR UNIFIÉE
-            const TopBarBlock(),
+            TopBarBlock(),
 
             const TitleBlock(
               title: 'فضاء التوثيق الإداري',
@@ -43,15 +48,18 @@ class Massar3Page extends StatelessWidget {
             ),
 
             const SizedBox(
-              height: 200,
+              height: 150,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   ParagraphBlock(
-                    'حزمة توثيق موجهة للإدارات العمومية.',
+                    'يعمل نظام التوثيق الرقمي المبتكر QRpruf على إطلاق حزمة توثيق متقدمة موجّهة للإدارات العمومية، تشمل معاينات ميدانية موثّقة، محاضر رقمية، تتبّع مسارات التدخل، وحلولاً فنية تدعم النزاهة والشفافية الإدارية.',
                   ),
                   ParagraphBlock(
-                    'معاينات ميدانية ومحاضر رقمية.',
+                    'هذه الخدمة توجد حالياً في مرحلة التطوير النهائي، وسيتم توفيرها خلال الشهور القريبة. وإلى حين تفعيلها، يمكن للموظفين والفاعلين الإداريين استعمال مسار "الاستعمال الشخصي" لإنجاز عمليات التوثيق الرقمية بكامل الموثوقية والفعالية المطلوبة.',
+                  ),
+                  ParagraphBlock(
+                    'ابدأ الآن في اعتماد التوثيق الإداري المتقدّم — سجّل لتكون من الأوائل في الاستفادة من الخطة التجريبية المجانية.',
                   ),
                 ],
               ),
@@ -60,17 +68,6 @@ class Massar3Page extends StatelessWidget {
             const SizedBox(height: 16),
 
             const QuoteBlock('توثيق إداري يعزز الثقة'),
-
-            const Spacer(),
-
-            NavBlock(
-              onBack: () => Navigator.pop(context),
-              onNext: () {},
-            ),
-
-            const NoteBlock(
-              'ملاحظة: لا يتم تخزين أي معطيات شخصية.',
-            ),
           ],
         ),
       ),

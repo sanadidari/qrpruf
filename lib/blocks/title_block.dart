@@ -16,8 +16,19 @@ class TitleBlock extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      margin: const EdgeInsets.symmetric(vertical: 24, horizontal: 18),
-      padding: const EdgeInsets.symmetric(vertical: 14),
+
+      /// 🔒 ANNULATION DU PADDING HORIZONTAL PARENT (MASSAR = 18)
+      margin: const EdgeInsets.symmetric(
+        vertical: 24,
+        horizontal: -18,
+      ),
+
+      /// 🔒 ESPACE INTERNE SYSTÈME
+      padding: const EdgeInsets.symmetric(
+        vertical: 14,
+        horizontal: 18,
+      ),
+
       color: const Color(0xFFEBF4F3),
       child: Column(
         children: [
@@ -25,22 +36,25 @@ class TitleBlock extends StatelessWidget {
             title,
             maxLines: 1,
             minFontSize: 16,
+            textAlign: TextAlign.center,
             style: GoogleFonts.cairo(
               fontSize: 24,
               fontWeight: FontWeight.w700,
               color: const Color(0xFF0C8172),
             ),
           ),
-          AutoSizeText(
-            subtitle,
-            maxLines: 1,
-            minFontSize: 14,
-            style: GoogleFonts.cairo(
-              fontSize: 22,
-              fontWeight: FontWeight.w700,
-              color: const Color(0xFF0C8172),
+          if (subtitle.isNotEmpty)
+            AutoSizeText(
+              subtitle,
+              maxLines: 1,
+              minFontSize: 14,
+              textAlign: TextAlign.center,
+              style: GoogleFonts.cairo(
+                fontSize: 22,
+                fontWeight: FontWeight.w700,
+                color: const Color(0xFF0C8172),
+              ),
             ),
-          ),
         ],
       ),
     );

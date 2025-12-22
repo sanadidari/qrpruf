@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'pages/dash1.dart';
+import 'pages/dash1.dart' as pages; // ✅ MODIF 1 : alias
 
 void main() {
   runApp(const QRprufApp());
@@ -55,7 +55,6 @@ class QRprufHome extends StatelessWidget {
 
           return Column(
             children: [
-              /// ================= CONTENT =================
               Expanded(
                 child: Center(
                   child: ConstrainedBox(
@@ -70,10 +69,8 @@ class QRprufHome extends StatelessWidget {
                             ? width
                             : maxContentWidth,
                         child: Column(
-                          crossAxisAlignment:
-                              CrossAxisAlignment.stretch,
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: [
-                            // HEADER
                             SizedBox(
                               height: isMobile ? 130 : 160,
                               child: Image.asset(
@@ -82,7 +79,6 @@ class QRprufHome extends StatelessWidget {
                               ),
                             ),
 
-                            // TOP BAR
                             Padding(
                               padding: EdgeInsets.symmetric(
                                 horizontal: isMobile ? 16 : 24,
@@ -113,7 +109,6 @@ class QRprufHome extends StatelessWidget {
                               ),
                             ),
 
-                            // MAIN CARD
                             Padding(
                               padding: EdgeInsets.symmetric(
                                   horizontal:
@@ -173,7 +168,6 @@ class QRprufHome extends StatelessWidget {
 
                             const SizedBox(height: 14),
 
-                            // SECTION + CTA
                             Padding(
                               padding: EdgeInsets.symmetric(
                                   horizontal:
@@ -226,7 +220,7 @@ class QRprufHome extends StatelessWidget {
                                         context,
                                         MaterialPageRoute(
                                           builder: (_) =>
-                                              Dash1Page(),
+                                              const pages.Dash1Page(), // ✅ MODIF 2
                                         ),
                                       );
                                     },
@@ -248,7 +242,6 @@ class QRprufHome extends StatelessWidget {
                 ),
               ),
 
-              /// ================= FOOTER =================
               SizedBox(
                 height: 42,
                 width: double.infinity,

@@ -10,7 +10,8 @@ class ParagraphBlock extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 10),
+      /// 🔧 MARGE HORIZONTALE AJUSTÉE (PLUS FINE)
+      padding: const EdgeInsets.fromLTRB(12, 0, 12, 10),
       child: AutoSizeText(
         text,
         textAlign: TextAlign.right,

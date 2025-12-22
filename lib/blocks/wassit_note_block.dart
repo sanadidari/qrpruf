@@ -9,9 +9,7 @@ class NoteBlock extends StatelessWidget {
   const NoteBlock([this._unusedText, Key? key]) : super(key: key);
 
   static const String _legalNote =
-      'ملاحظة: لا يحتفظ QRpruf بأي بيانات تعريفية أو بيومترية ضمن النظام، '
-      'وتتم جميع عمليات التوثيق والتحقق بالاعتماد على أمان جهازك، '
-      'دون تخزين أو معالجة لأي معطيات شخصية خارج الإطار القانوني الآمن.';
+      'ملاحظة: لا يحتفظ QRpruf بأي بيانات تعريفية أو بيومترية ضمن النظام، ';
 
   @override
   Widget build(BuildContext context) {

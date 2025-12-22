@@ -16,12 +16,15 @@ class TopBarBlock extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
+          /// MENU
           Image.asset(
             'assets/images/menu_deroul.png',
             width: 24,
             height: 24,
           ),
+
           const _LoginBlock(),
+
           Row(
             children: [
               Image.asset('assets/images/ico1.png', width: 22, height: 22),
@@ -45,17 +48,18 @@ class _LoginBlock extends StatelessWidget {
     return SizedBox(
       height: 28,
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
             mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 'إنشاء حساب',
                 style: GoogleFonts.cairo(
                   fontSize: 10,
                   color: Colors.grey,
+                  height: 1.1,
                 ),
               ),
               Text(
@@ -63,12 +67,18 @@ class _LoginBlock extends StatelessWidget {
                 style: GoogleFonts.cairo(
                   fontSize: 12,
                   fontWeight: FontWeight.bold,
+                  height: 1.1,
                 ),
               ),
             ],
           ),
-          const SizedBox(width: 6),
-          Image.asset('assets/images/flechy.png', width: 18),
+          Padding(
+            padding: const EdgeInsets.only(top: 9),
+            child: Image.asset(
+              'assets/images/flechy.png',
+              width: 18,
+            ),
+          ),
         ],
       ),
     );

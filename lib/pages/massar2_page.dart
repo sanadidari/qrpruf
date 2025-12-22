@@ -5,8 +5,7 @@ import '../blocks/topbar_block.dart';
 import '../blocks/title_block.dart';
 import '../blocks/paragraph_block.dart';
 import '../blocks/quote_block.dart';
-import '../blocks/note_block.dart';
-import '../blocks/nav_block.dart';
+import '../navigation/massar_navigation.dart';
 
 class Massar2Page extends StatelessWidget {
   const Massar2Page({super.key});
@@ -14,6 +13,10 @@ class Massar2Page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PageTemplate(
+      /// 🔒 NAVIGATION MASSAR (OBLIGATOIRE)
+      onBack: () => Navigator.pop(context),
+      onNext: () => goToWassit(context),
+
       header: SizedBox(
         height: 70,
         width: double.infinity,
@@ -22,6 +25,7 @@ class Massar2Page extends StatelessWidget {
           fit: BoxFit.cover,
         ),
       ),
+
       footer: SizedBox(
         height: 40,
         width: double.infinity,
@@ -30,12 +34,13 @@ class Massar2Page extends StatelessWidget {
           fit: BoxFit.cover,
         ),
       ),
+
+      /// 🔹 CONTENU UNIQUEMENT
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 18),
         child: Column(
           children: [
-            /// ✅ TOP BAR UNIFIÉE
-            const TopBarBlock(),
+            TopBarBlock(),
 
             const TitleBlock(
               title: 'فضاء التوثيق الميداني',
@@ -43,18 +48,18 @@ class Massar2Page extends StatelessWidget {
             ),
 
             const SizedBox(
-              height: 240,
+              height: 150,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   ParagraphBlock(
-                    'تم تصميم QRpruf ليتماشى مع الاحتياجات الدقيقة للمفوضين القضائيين.',
+                    'تم تصميم نظام التوثيق الرقمي المبتكر QRpruf خصيصاً ليتماشى مع الاحتياجات الدقيقة للمفوضين القضائيين، باعتبارهم من المهن التي تستوجب توثيقاً محايداً ومؤمّناً وعالي الحجّية.',
                   ),
                   ParagraphBlock(
-                    'أدوات احترافية للتوثيق الميداني وختم زمني ومكاني.',
+                    'ويوفّر لهم النظام أدوات احترافية للتوثيق الميداني تشمل إدراج المحاضر، حفظ المعاينات، تتبّع المسارات الجغرافية، وتسجيل الوقائع بالصوت أو الصورة أو الفيديو بختم زمني ومكاني موثوق. كما يقدم نماذج مهنية جاهزة تضمن الانسجام مع المعايير القانونية، وتمكّن المفوّض من إنتاج دليل رقمي قوي يصلح للإدلاء أمام الجهات المختصة. وقد تم بناء هذا المسار ليزوّد المفوض القضائي بوسيلة توثيق حديثة تعزّز دقة ممارسته وتقوّي حجية محاضره أمام القضاء والإدارة.',
                   ),
                   ParagraphBlock(
-                    'محاضر رقمية جاهزة للتسليم القانوني.',
+                    'ابدأ الآن في اعتماد التوثيق المهني الذكي لترتقي بممارستك – سجّل لتكون من الأوائل المستفيدين من الخطة المجانية.',
                   ),
                 ],
               ),
@@ -63,17 +68,6 @@ class Massar2Page extends StatelessWidget {
             const SizedBox(height: 18),
 
             const QuoteBlock('محاضر رقمية… بحجية لا تُجادل'),
-
-            const Spacer(),
-
-            NavBlock(
-              onBack: () => Navigator.pop(context),
-              onNext: () {},
-            ),
-
-            const NoteBlock(
-              'ملاحظة: جميع عمليات التوثيق تتم وفق الإطار القانوني الآمن.',
-            ),
           ],
         ),
       ),

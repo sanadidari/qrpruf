@@ -9,6 +9,7 @@ import 'massar2_page.dart';
 import 'massar3_page.dart';
 import 'massar4_page.dart';
 import 'massar5_page.dart';
+import 'massar6_page.dart';
 
 class Dash1Page extends StatelessWidget {
   const Dash1Page({super.key});
@@ -42,12 +43,10 @@ class Dash1Page extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            /// 🔹 TOP BAR (BLOC COMMUN)
-            const TopBarBlock(),
+            TopBarBlock(),
 
             const SizedBox(height: 24),
 
-            /// TITLE
             Container(
               width: double.infinity,
               color: const Color(0xFFEBF4F3),
@@ -100,7 +99,6 @@ class Dash1Page extends StatelessWidget {
 
             const SizedBox(height: 18),
 
-            /// BUTTONS
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 10),
               padding: const EdgeInsets.all(10),
@@ -124,38 +122,8 @@ class Dash1Page extends StatelessWidget {
                     children: [
                       _navBtn(context, 'assets/images/btn_icon4.png', const Massar4Page()),
                       _navBtn(context, 'assets/images/btn_icon5.png', const Massar5Page()),
-                      Image.asset('assets/images/btn_icon6.png', width: 95, height: 90),
+                      _navBtn(context, 'assets/images/btn_icon6.png', const Massar6Page()), // ✅ AJOUT
                     ],
-                  ),
-                ],
-              ),
-            ),
-
-            const Spacer(),
-
-            /// NOTE
-            Padding(
-              padding: const EdgeInsets.fromLTRB(10, 0, 10, 10),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Column(
-                    children: [
-                      Image.asset('assets/images/whatsy.png', width: 22),
-                      const SizedBox(height: 6),
-                      Image.asset('assets/images/helpy.png', width: 22),
-                    ],
-                  ),
-                  const SizedBox(width: 10),
-                  Expanded(
-                    child: Text(
-                      'ملاحظة: لا يحتفظ QRpruf بأي بيانات تعريفية أو بيومترية ضمن مركز التحكم، وتتم جميع عمليات التوثيق والتحقق بالاعتماد على أمان جهازك.',
-                      textAlign: TextAlign.right,
-                      style: GoogleFonts.cairo(
-                        fontSize: 9,
-                        height: 1.4,
-                      ),
-                    ),
                   ),
                 ],
               ),
