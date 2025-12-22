@@ -1,15 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:auto_size_text/auto_size_text.dart';
-import 'package:google_fonts/google_fonts.dart';
 
-class NoteBlock extends StatelessWidget {
-  /// ⚠️ Paramètre conservé uniquement pour compatibilité
-  final String? _unusedText;
-
-  const NoteBlock([this._unusedText, Key? key]) : super(key: key);
+class WassitNoteBlock extends StatelessWidget {
+  const WassitNoteBlock({super.key});
 
   static const String _legalNote =
-      'ملاحظة: لا يحتفظ QRpruf بأي بيانات تعريفية أو بيومترية ضمن النظام، ';
+      'ملاحظة: لا يحتفظ QRpruf بأي بيانات تعريفية أو بيومترية ضمن النظام';
 
   @override
   Widget build(BuildContext context) {
@@ -18,22 +13,22 @@ class NoteBlock extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          /// 🔹 TEXTE À DROITE (RTL)
+          /// 🔹 TEXTE (RTL)
           Expanded(
-            child: AutoSizeText(
+            child: Text(
               _legalNote,
               textAlign: TextAlign.right,
-              minFontSize: 8,
-              style: GoogleFonts.cairo(
+              style: const TextStyle(
                 fontSize: 10,
                 height: 1.5,
+                color: Colors.black87,
               ),
             ),
           ),
 
           const SizedBox(width: 10),
 
-          /// 🔹 ICÔNES À GAUCHE
+          /// 🔹 ICÔNES
           Column(
             children: [
               Image.asset('assets/images/whatsy.png', width: 22),
