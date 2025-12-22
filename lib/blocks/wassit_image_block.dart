@@ -23,33 +23,45 @@ class WassitImageBlock extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          /// 🔹 HEADER IMAGE
+          /// 🔹 HEADER — IMAGE
           Text(
             'لقطة صورة',
             style: GoogleFonts.cairo(
               fontSize: 16,
               fontWeight: FontWeight.bold,
+              color: const Color(0xFF0C8172),
             ),
           ),
 
           const SizedBox(height: 16),
 
-          /// 🔹 LIVE IMAGE
+          /// 🔹 IMAGE LIVE (statique)
           const WassitImageLiveBlock(),
 
           const SizedBox(height: 12),
 
-          /// 🔹 UPLOAD IMAGE
+          /// 🔹 IMAGE UPLOAD (statique)
           const WassitImageUploadBlock(),
 
           const Spacer(),
 
-          /// 🔹 VALIDATION IMAGE
+          /// 🔹 VALIDATION DU MOYEN IMAGE
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
               onPressed: onValidate,
-              child: const Text('حفظ الصورة'),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xFF0C8172),
+                foregroundColor: Colors.white,
+                padding: const EdgeInsets.symmetric(vertical: 12),
+              ),
+              child: Text(
+                'حفظ الصورة',
+                style: GoogleFonts.cairo(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
             ),
           ),
         ],

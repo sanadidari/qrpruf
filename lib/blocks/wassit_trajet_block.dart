@@ -22,28 +22,40 @@ class WassitTrajetBlock extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          /// 🔹 HEADER TRAJET
+          /// 🔹 HEADER — TRAJET
           Text(
             'تسجيل المسار',
             style: GoogleFonts.cairo(
               fontSize: 16,
               fontWeight: FontWeight.bold,
+              color: const Color(0xFF0C8172),
             ),
           ),
 
           const SizedBox(height: 16),
 
-          /// 🔹 LIVE TRAJET
+          /// 🔹 TRAJET LIVE (statique)
           const WassitTrajetLiveBlock(),
 
           const Spacer(),
 
-          /// 🔹 VALIDATION TRAJET
+          /// 🔹 VALIDATION DU MOYEN TRAJET
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
               onPressed: onValidate,
-              child: const Text('حفظ المسار'),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xFF0C8172),
+                foregroundColor: Colors.white,
+                padding: const EdgeInsets.symmetric(vertical: 12),
+              ),
+              child: Text(
+                'حفظ المسار',
+                style: GoogleFonts.cairo(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
             ),
           ),
         ],

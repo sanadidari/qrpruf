@@ -23,33 +23,45 @@ class WassitVideoBlock extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          /// 🔹 HEADER VIDEO
+          /// 🔹 HEADER — VIDEO
           Text(
             'شريط فيديو',
             style: GoogleFonts.cairo(
               fontSize: 16,
               fontWeight: FontWeight.bold,
+              color: const Color(0xFF0C8172),
             ),
           ),
 
           const SizedBox(height: 16),
 
-          /// 🔹 LIVE VIDEO
+          /// 🔹 VIDEO LIVE (statique)
           const WassitVideoLiveBlock(),
 
           const SizedBox(height: 12),
 
-          /// 🔹 UPLOAD VIDEO
+          /// 🔹 VIDEO UPLOAD (statique)
           const WassitVideoUploadBlock(),
 
           const Spacer(),
 
-          /// 🔹 VALIDATION VIDEO
+          /// 🔹 VALIDATION DU MOYEN VIDEO
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
               onPressed: onValidate,
-              child: const Text('حفظ الفيديو'),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xFF0C8172),
+                foregroundColor: Colors.white,
+                padding: const EdgeInsets.symmetric(vertical: 12),
+              ),
+              child: Text(
+                'حفظ الفيديو',
+                style: GoogleFonts.cairo(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
             ),
           ),
         ],
